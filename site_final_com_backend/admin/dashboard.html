@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Equilíbrio Digital - Painel Administrativo</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container auth-required admin-only">
+        <div class="header">
+            <h1>Painel Administrativo - Guia Equilíbrio Digital</h1>
+            <div class="menu-icon" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- Menu lateral (oculto por padrão) -->
+        <div class="side-menu" id="side-menu">
+            <div class="user-profile">
+                <div class="avatar avatar-lg">
+                    <span class="user-initial">A</span>
+                </div>
+                <div class="user-info">
+                    <h3 class="user-name">Administrador</h3>
+                    <p class="user-role">Administrador</p>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html" class="side-nav-item active">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="users.html" class="side-nav-item">
+                    <i class="fas fa-users"></i> Usuários
+                </a>
+                <a href="content.html" class="side-nav-item">
+                    <i class="fas fa-file-alt"></i> Conteúdo
+                </a>
+                <a href="support.html" class="side-nav-item">
+                    <i class="fas fa-headset"></i> Suporte
+                </a>
+                <a href="settings.html" class="side-nav-item">
+                    <i class="fas fa-cog"></i> Configurações
+                </a>
+                <a href="../static/dashboard.html" class="side-nav-item">
+                    <i class="fas fa-home"></i> Área de Membros
+                </a>
+                <a href="#" class="side-nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </a>
+            </nav>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="main-content admin-dashboard">
+            <h2 class="section-title">Dashboard Administrativo</h2>
+            
+            <!-- Estatísticas gerais -->
+            <div class="stats-grid">
+                <div class="stats-card">
+                    <i class="fas fa-users stats-icon"></i>
+                    <div class="stats-number">156</div>
+                    <div class="stats-label">Total de Usuários</div>
+                </div>
+                
+                <div class="stats-card">
+                    <i class="fas fa-user-check stats-icon"></i>
+                    <div class="stats-number">89</div>
+                    <div class="stats-label">Usuários Ativos</div>
+                </div>
+                
+                <div class="stats-card">
+                    <i class="fas fa-user-plus stats-icon"></i>
+                    <div class="stats-number">12</div>
+                    <div class="stats-label">Novos Usuários Hoje</div>
+                </div>
+                
+                <div class="stats-card">
+                    <i class="fas fa-tasks stats-icon"></i>
+                    <div class="stats-number">45</div>
+                    <div class="stats-label">Total de Atividades</div>
+                </div>
+            </div>
+            
+            <!-- Gráfico de crescimento -->
+            <div class="card">
+                <h3 class="card-title">Crescimento de Usuários</h3>
+                <div class="chart-container">
+                    <canvas id="userGrowthChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Usuários recentes -->
+            <div class="card">
+                <h3 class="card-title">Usuários Recentes</h3>
+                <div class="table-responsive">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Data de Cadastro</th>
+                                <th>Último Acesso</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-users-table">
+                            <tr>
+                                <td>Ana Silva</td>
+                                <td>ana@exemplo.com</td>
+                                <td>15/03/2025</td>
+                                <td>20/05/2025</td>
+                                <td><span class="badge badge-primary">Ativo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>João Pereira</td>
+                                <td>joao@exemplo.com</td>
+                                <td>10/04/2025</td>
+                                <td>21/05/2025</td>
+                                <td><span class="badge badge-primary">Ativo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Maria Santos</td>
+                                <td>maria@exemplo.com</td>
+                                <td>22/05/2025</td>
+                                <td>22/05/2025</td>
+                                <td><span class="badge badge-secondary">Novo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <a href="users.html" class="btn btn-primary btn-sm">Ver Todos os Usuários</a>
+                </div>
+            </div>
+            
+            <!-- Estatísticas de conteúdo -->
+            <div class="card">
+                <h3 class="card-title">Estatísticas de Conteúdo</h3>
+                <div class="content-stats">
+                    <div class="content-stat-item">
+                        <div class="content-stat-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="content-stat-info">
+                            <h4>Atividades</h4>
+                            <div class="stats-number">45</div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-stat-item">
+                        <div class="content-stat-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="content-stat-info">
+                            <h4>Receitas</h4>
+                            <div class="stats-number">30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-stat-item">
+                        <div class="content-stat-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="content-stat-info">
+                            <h4>Imagens para Colorir</h4>
+                            <div class="stats-number">25</div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-stat-item">
+                        <div class="content-stat-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="content-stat-info">
+                            <h4>Tópicos de Chat</h4>
+                            <div class="stats-number">78</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="content.html" class="btn btn-primary btn-sm">Gerenciar Conteúdo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão flutuante para ações rápidas -->
+        <div class="btn btn-secondary btn-float" id="admin-action-btn">
+            <i class="fas fa-plus"></i>
+        </div>
+    </div>
+
+    <!-- Overlay para o menu lateral -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- Modal de ações rápidas (oculto por padrão) -->
+    <div class="modal" id="quick-actions-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Ações Rápidas</h3>
+                <span class="modal-close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="quick-action-grid">
+                    <a href="users.html?action=new" class="quick-action-item">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Adicionar Usuário</span>
+                    </a>
+                    <a href="content.html?action=new-activity" class="quick-action-item">
+                        <i class="fas fa-tasks"></i>
+                        <span>Nova Atividade</span>
+                    </a>
+                    <a href="content.html?action=new-recipe" class="quick-action-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Nova Receita</span>
+                    </a>
+                    <a href="content.html?action=new-coloring" class="quick-action-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>Nova Imagem</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/auth.js"></script>
+    <script src="../static/js/admin.js"></script>
+    <script>
+        // Verificar autenticação e permissão de administrador
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!isLoggedIn()) {
+                window.location.href = '../static/login.html';
+            } else {
+                // Verificar se é administrador
+                const user = getLoggedInUser();
+                if (user && user.role !== 'admin') {
+                    // Redirecionar para área de membros se não for admin
+                    window.location.href = '../static/dashboard.html';
+                } else {
+                    // Carregar dados do usuário admin
+                    document.querySelectorAll('.user-name').forEach(el => {
+                        el.textContent = user.name;
+                    });
+                    
+                    document.querySelectorAll('.user-initial').forEach(el => {
+                        el.textContent = user.name.charAt(0);
+                    });
+                }
+            }
+            
+            // Configurar botão de logout
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                logoutUser();
+            });
+            
+            // Configurar toggle do menu lateral
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideMenu = document.getElementById('side-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            
+            menuToggle.addEventListener('click', function() {
+                sideMenu.classList.toggle('open');
+                menuOverlay.classList.toggle('active');
+            });
+            
+            menuOverlay.addEventListener('click', function() {
+                sideMenu.classList.remove('open');
+                menuOverlay.classList.remove('active');
+            });
+            
+            // Configurar modal de ações rápidas
+            const actionBtn = document.getElementById('admin-action-btn');
+            const actionModal = document.getElementById('quick-actions-modal');
+            const modalClose = document.querySelector('.modal-close');
+            
+            actionBtn.addEventListener('click', function() {
+                actionModal.style.display = 'block';
+            });
+            
+            modalClose.addEventListener('click', function() {
+                actionModal.style.display = 'none';
+            });
+            
+            window.addEventListener('click', function(e) {
+                if (e.target === actionModal) {
+                    actionModal.style.display = 'none';
+                }
+            });
+            
+            // Inicializar gráfico de crescimento
+            const ctx = document.getElementById('userGrowthChart').getContext('2d');
+            const userGrowthChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai'],
+                    datasets: [{
+                        label: 'Novos Usuários',
+                        data: [12, 19, 35, 52, 38],
+                        backgroundColor: 'rgba(13, 94, 99, 0.2)',
+                        borderColor: 'rgba(13, 94, 99, 1)',
+                        borderWidth: 2,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

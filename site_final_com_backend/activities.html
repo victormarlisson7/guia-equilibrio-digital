@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Equilíbrio Digital - Atividades</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container auth-required">
+        <div class="header">
+            <h1>Guia Equilíbrio Digital</h1>
+            <div class="menu-icon" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- Menu lateral (oculto por padrão) -->
+        <div class="side-menu" id="side-menu">
+            <div class="user-profile">
+                <div class="avatar avatar-lg">
+                    <span class="user-initial">A</span>
+                </div>
+                <div class="user-info">
+                    <h3 class="user-name">Ana Silva</h3>
+                    <p class="user-role">Membro</p>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html" class="side-nav-item">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="activities.html" class="side-nav-item active">
+                    <i class="fas fa-tasks"></i> Atividades
+                </a>
+                <a href="food.html" class="side-nav-item">
+                    <i class="fas fa-utensils"></i> Comidas Saudáveis
+                </a>
+                <a href="coloring.html" class="side-nav-item">
+                    <i class="fas fa-paint-brush"></i> Colorir
+                </a>
+                <a href="chat.html" class="side-nav-item">
+                    <i class="fas fa-comments"></i> Chat
+                </a>
+                <a href="profile.html" class="side-nav-item">
+                    <i class="fas fa-user"></i> Perfil
+                </a>
+                <a href="#" class="side-nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </a>
+            </nav>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="main-content">
+            <h2 class="section-title">Atividades Práticas</h2>
+            
+            <!-- Filtros e pesquisa -->
+            <div class="filters-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar atividades..." class="search-input">
+                    <button class="btn btn-primary btn-sm search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <div class="filter-options">
+                    <select class="filter-select" id="category-filter">
+                        <option value="">Todas as categorias</option>
+                        <option value="outdoor">Ao ar livre</option>
+                        <option value="indoor">Em casa</option>
+                        <option value="creative">Criativas</option>
+                        <option value="educational">Educativas</option>
+                        <option value="family">Em família</option>
+                    </select>
+                    
+                    <select class="filter-select" id="age-filter">
+                        <option value="">Todas as idades</option>
+                        <option value="2-4">2 a 4 anos</option>
+                        <option value="5-7">5 a 7 anos</option>
+                        <option value="8-10">8 a 10 anos</option>
+                        <option value="11-13">11 a 13 anos</option>
+                        <option value="14+">14+ anos</option>
+                    </select>
+                    
+                    <select class="filter-select" id="duration-filter">
+                        <option value="">Qualquer duração</option>
+                        <option value="short">Curta (até 30 min)</option>
+                        <option value="medium">Média (30-60 min)</option>
+                        <option value="long">Longa (mais de 60 min)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Lista de atividades -->
+            <div class="activities-grid">
+                <!-- Atividade 1 -->
+                <div class="activity-card" data-category="outdoor family" data-age="5-7 8-10" data-duration="medium">
+                    <div class="activity-image">
+                        <img src="static/images/activities-icon.png" alt="Brincadeira ao ar livre" class="activity-img">
+                        <span class="activity-badge outdoor">Ao ar livre</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Brincadeira ao ar livre</h3>
+                        <div class="activity-meta">
+                            <span class="activity-age"><i class="fas fa-child"></i> 5-10 anos</span>
+                            <span class="activity-time"><i class="fas fa-clock"></i> 45 min</span>
+                            <span class="activity-difficulty easy"><i class="fas fa-star"></i> Fácil</span>
+                        </div>
+                        <p class="activity-description">Explore a natureza com seu filho através de uma caça ao tesouro no parque ou quintal.</p>
+                        <div class="activity-actions">
+                            <button class="btn btn-primary btn-sm view-activity" data-activity-id="1">Ver Detalhes</button>
+                            <button class="btn btn-outline btn-sm mark-complete" data-activity-id="1">Marcar como Concluída</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Atividade 2 -->
+                <div class="activity-card" data-category="indoor creative" data-age="2-4 5-7" data-duration="short">
+                    <div class="activity-image">
+                        <img src="static/images/activities-icon.png" alt="Pintura com os dedos" class="activity-img">
+                        <span class="activity-badge creative">Criativa</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Pintura com os dedos</h3>
+                        <div class="activity-meta">
+                            <span class="activity-age"><i class="fas fa-child"></i> 2-7 anos</span>
+                            <span class="activity-time"><i class="fas fa-clock"></i> 30 min</span>
+                            <span class="activity-difficulty easy"><i class="fas fa-star"></i> Fácil</span>
+                        </div>
+                        <p class="activity-description">Estimule a criatividade do seu filho com uma sessão de pintura com os dedos usando tintas naturais.</p>
+                        <div class="activity-actions">
+                            <button class="btn btn-primary btn-sm view-activity" data-activity-id="2">Ver Detalhes</button>
+                            <button class="btn btn-outline btn-sm mark-complete" data-activity-id="2">Marcar como Concluída</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Atividade 3 -->
+                <div class="activity-card" data-category="indoor educational" data-age="8-10 11-13" data-duration="medium">
+                    <div class="activity-image">
+                        <img src="static/images/activities-icon.png" alt="Leitura em família" class="activity-img">
+                        <span class="activity-badge educational">Educativa</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Leitura em família</h3>
+                        <div class="activity-meta">
+                            <span class="activity-age"><i class="fas fa-child"></i> 8-13 anos</span>
+                            <span class="activity-time"><i class="fas fa-clock"></i> 45 min</span>
+                            <span class="activity-difficulty medium"><i class="fas fa-star"></i><i class="fas fa-star"></i> Média</span>
+                        </div>
+                        <p class="activity-description">Escolha um livro com valores cristãos e faça uma leitura compartilhada, discutindo os ensinamentos.</p>
+                        <div class="activity-actions">
+                            <button class="btn btn-primary btn-sm view-activity" data-activity-id="3">Ver Detalhes</button>
+                            <button class="btn btn-outline btn-sm mark-complete" data-activity-id="3">Marcar como Concluída</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Atividade 4 -->
+                <div class="activity-card" data-category="indoor family" data-age="5-7 8-10 11-13" data-duration="long">
+                    <div class="activity-image">
+                        <img src="static/images/activities-icon.png" alt="Jogo de tabuleiro" class="activity-img">
+                        <span class="activity-badge family">Em família</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Jogo de tabuleiro</h3>
+                        <div class="activity-meta">
+                            <span class="activity-age"><i class="fas fa-child"></i> 5-13 anos</span>
+                            <span class="activity-time"><i class="fas fa-clock"></i> 90 min</span>
+                            <span class="activity-difficulty medium"><i class="fas fa-star"></i><i class="fas fa-star"></i> Média</span>
+                        </div>
+                        <p class="activity-description">Reúna a família para uma noite de jogos de tabuleiro, promovendo interação sem telas.</p>
+                        <div class="activity-actions">
+                            <button class="btn btn-primary btn-sm view-activity" data-activity-id="4">Ver Detalhes</button>
+                            <button class="btn btn-outline btn-sm mark-complete" data-activity-id="4">Marcar como Concluída</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Atividade 5 -->
+                <div class="activity-card" data-category="outdoor educational" data-age="8-10 11-13 14+" data-duration="long">
+                    <div class="activity-image">
+                        <img src="static/images/activities-icon.png" alt="Passeio educativo" class="activity-img">
+                        <span class="activity-badge educational">Educativa</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Passeio educativo</h3>
+                        <div class="activity-meta">
+                            <span class="activity-age"><i class="fas fa-child"></i> 8+ anos</span>
+                            <span class="activity-time"><i class="fas fa-clock"></i> 120 min</span>
+                            <span class="activity-difficulty hard"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> Difícil</span>
+                        </div>
+                        <p class="activity-description">Visite um museu, jardim botânico ou centro histórico, promovendo aprendizado fora das telas.</p>
+                        <div class="activity-actions">
+                            <button class="btn btn-primary btn-sm view-activity" data-activity-id="5">Ver Detalhes</button>
+                            <button class="btn btn-outline btn-sm mark-complete" data-activity-id="5">Marcar como Concluída</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Atividade 6 -->
+                <div class="activity-card" data-category="indoor creative" data-age="5-7 8-10" data-duration="medium">
+                    <div class="activity-image">
+                        <img src="static/images/activities-icon.png" alt="Desenho em família" class="activity-img">
+                        <span class="activity-badge creative">Criativa</span>
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Desenho em família</h3>
+                        <div class="activity-meta">
+                            <span class="activity-age"><i class="fas fa-child"></i> 5-10 anos</span>
+                            <span class="activity-time"><i class="fas fa-clock"></i> 60 min</span>
+                            <span class="activity-difficulty easy"><i class="fas fa-star"></i> Fácil</span>
+                        </div>
+                        <p class="activity-description">Dedique um tempo para desenhar junto com seu filho, criando uma história em conjunto.</p>
+                        <div class="activity-actions">
+                            <button class="btn btn-primary btn-sm view-activity" data-activity-id="6">Ver Detalhes</button>
+                            <button class="btn btn-outline btn-sm mark-complete" data-activity-id="6">Marcar como Concluída</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Paginação -->
+            <div class="pagination">
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal de detalhes da atividade (oculto por padrão) -->
+        <div class="modal" id="activity-details-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-activity-title">Brincadeira ao ar livre</h3>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="activity-detail-image">
+                        <img src="static/images/activities-icon.png" alt="Brincadeira ao ar livre" id="modal-activity-img">
+                    </div>
+                    
+                    <div class="activity-detail-meta">
+                        <span class="activity-meta-item"><i class="fas fa-child"></i> <span id="modal-activity-age">5-10 anos</span></span>
+                        <span class="activity-meta-item"><i class="fas fa-clock"></i> <span id="modal-activity-time">45 min</span></span>
+                        <span class="activity-meta-item"><i class="fas fa-star"></i> <span id="modal-activity-difficulty">Fácil</span></span>
+                        <span class="activity-meta-item"><i class="fas fa-tag"></i> <span id="modal-activity-category">Ao ar livre</span></span>
+                    </div>
+                    
+                    <div class="activity-detail-section">
+                        <h4>Descrição</h4>
+                        <p id="modal-activity-description">Explore a natureza com seu filho através de uma caça ao tesouro no parque ou quintal. Esta atividade estimula a curiosidade, o movimento físico e a conexão com o ambiente natural.</p>
+                    </div>
+                    
+                    <div class="activity-detail-section">
+                        <h4>Materiais Necessários</h4>
+                        <ul id="modal-activity-materials">
+                            <li>Lista de itens para encontrar</li>
+                            <li>Sacola para coletar os itens</li>
+                            <li>Lápis e papel</li>
+                            <li>Opcional: lupa, binóculos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="activity-detail-section">
+                        <h4>Passo a Passo</h4>
+                        <ol id="modal-activity-steps">
+                            <li>Prepare uma lista de itens naturais para seu filho encontrar (folhas, pedras, flores, etc.)</li>
+                            <li>Explique as regras da caça ao tesouro</li>
+                            <li>Acompanhe seu filho na exploração</li>
+                            <li>Converse sobre cada item encontrado</li>
+                            <li>Ao final, discutam sobre a beleza da criação divina</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="activity-detail-section">
+                        <h4>Benefícios</h4>
+                        <ul id="modal-activity-benefits">
+                            <li>Redução do tempo de tela</li>
+                            <li>Estímulo à atividade física</li>
+                            <li>Conexão com a natureza</li>
+                            <li>Fortalecimento do vínculo familiar</li>
+                            <li>Aprendizado sobre a criação divina</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="activity-detail-section">
+                        <h4>Dicas</h4>
+                        <ul id="modal-activity-tips">
+                            <li>Adapte a dificuldade dos itens à idade da criança</li>
+                            <li>Tire fotos dos itens encontrados para criar um álbum depois</li>
+                            <li>Inclua uma pequena reflexão ou versículo bíblico relacionado à natureza</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="modal-mark-complete">Marcar como Concluída</button>
+                    <button class="btn btn-secondary" id="modal-close">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de navegação inferior -->
+        <div class="bottom-nav">
+            <a href="dashboard.html" class="nav-link" data-target="dashboard">
+                <i class="fas fa-home nav-icon"></i>
+                <span>Início</span>
+            </a>
+            <a href="activities.html" class="nav-link active" data-target="activities">
+                <i class="fas fa-tasks nav-icon"></i>
+                <span>Atividades</span>
+            </a>
+            <a href="food.html" class="nav-link" data-target="food">
+                <i class="fas fa-utensils nav-icon"></i>
+                <span>Comidas</span>
+            </a>
+            <a href="chat.html" class="nav-link" data-target="chat">
+                <i class="fas fa-comments nav-icon"></i>
+                <span>Chat</span>
+            </a>
+            <a href="profile.html" class="nav-link" data-target="profile">
+                <i class="fas fa-user nav-icon"></i>
+                <span>Perfil</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay para o menu lateral -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <script src="static/js/main.js"></script>
+    <script src="static/js/auth.js"></script>
+    <script>
+        // Verificar autenticação
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!isLoggedIn()) {
+                window.location.href = 'login.html';
+            } else {
+                // Carregar dados do usuário
+                const user = getLoggedInUser();
+                if (user) {
+                    document.querySelectorAll('.user-name').forEach(el => {
+                        el.textContent = user.name;
+                    });
+                    
+                    document.querySelectorAll('.user-initial').forEach(el => {
+                        el.textContent = user.name.charAt(0);
+                    });
+                    
+                    document.querySelectorAll('.user-role').forEach(el => {
+                        el.textContent = user.role === 'admin' ? 'Administrador' : 'Membro';
+                    });
+                }
+                
+                // Inicializar funcionalidades da página
+                initActivitiesPage();
+            }
+            
+            // Configurar botão de logout
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                logoutUser();
+            });
+            
+            // Configurar toggle do menu lateral
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideMenu = document.getElementById('side-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            
+            menuToggle.addEventListener('click', function() {
+                sideMenu.classList.toggle('open');
+                menuOverlay.classList.toggle('active');
+            });
+            
+            menuOverlay.addEventListener('click', function() {
+                sideMenu.classList.remove('open');
+                menuOverlay.classList.remove('active');
+            });
+        });
+        
+        // Inicializar funcionalidades da página de atividades
+        function initActivitiesPage() {
+            // Configurar filtros
+            setupFilters();
+            
+            // Configurar botões de visualização de atividade
+            setupActivityButtons();
+            
+            // Configurar modal de detalhes
+            setupActivityModal();
+            
+            // Carregar atividades concluídas
+            loadCompletedActivities();
+        }
+        
+        // Configurar filtros
+        function setupFilters() {
+            const categoryFilter = document.getElementById('category-filter');
+            const ageFilter = document.getElementById('age-filter');
+            const durationFilter = document.getElementById('duration-filter');
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            
+            // Função para aplicar filtros
+            function applyFilters() {
+                const categoryValue = categoryFilter.value;
+                const ageValue = ageFilter.value;
+                const durationValue = durationFilter.value;
+                const searchValue = searchInput.value.toLowerCase();
+                
+                const activityCards = document.querySelectorAll('.activity-card');
+                
+                activityCards.forEach(card => {
+                    let showCard = true;
+                    
+                    // Filtrar por categoria
+                    if (categoryValue && !card.dataset.category.includes(categoryValue)) {
+                        showCard = false;
+                    }
+                    
+                    // Filtrar por idade
+                    if (ageValue && !card.dataset.age.includes(ageValue)) {
+                        showCard = false;
+                    }
+                    
+                    // Filtrar por duração
+                    if (durationValue && card.dataset.duration !== durationValue) {
+                        showCard = false;
+                    }
+                    
+                    // Filtrar por texto de busca
+                    if (searchValue) {
+                        const title = card.querySelector('.activity-title').textContent.toLowerCase();
+                        const description = card.querySelector('.activity-description').textContent.toLowerCase();
+                        
+                        if (!title.includes(searchValue) && !description.includes(searchValue)) {
+                            showCard = false;
+                        }
+                    }
+                    
+                    // Mostrar ou ocultar card
+                    card.style.display = showCard ? 'flex' : 'none';
+                });
+            }
+            
+            // Adicionar event listeners
+            categoryFilter.addEventListener('change', applyFilters);
+            ageFilter.addEventListener('change', applyFilters);
+            durationFilter.addEventListener('change', applyFilters);
+            searchBtn.addEventListener('click', applyFilters);
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    applyFilters();
+                }
+            });
+        }
+        
+        // Configurar botões de visualização de atividade
+        function setupActivityButtons() {
+            const viewButtons = document.querySelectorAll('.view-activity');
+            const completeButtons = document.querySelectorAll('.mark-complete');
+            
+            // Botões de visualização
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const activityId = this.getAttribute('data-activity-id');
+                    openActivityModal(activityId);
+                });
+            });
+            
+            // Botões de marcar como concluída
+            completeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const activityId = this.getAttribute('data-activity-id');
+                    markActivityAsComplete(activityId);
+                });
+            });
+        }
+        
+        // Configurar modal de detalhes da atividade
+        function setupActivityModal() {
+            const modal = document.getElementById('activity-details-modal');
+            const closeBtn = modal.querySelector('.modal-close');
+            const closeModalBtn = document.getElementById('modal-close');
+            const markCompleteBtn = document.getElementById('modal-mark-complete');
+            
+            // Fechar modal
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            closeModalBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // Fechar ao clicar fora
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Marcar como concluída
+            markCompleteBtn.addEventListener('click', function() {
+                const activityId = this.getAttribute('data-activity-id');
+                markActivityAsComplete(activityId);
+                modal.style.display = 'none';
+            });
+        }
+        
+        // Abrir modal de detalhes da atividade
+        function openActivityModal(activityId) {
+            // Simular busca de dados da atividade
+            const activityData = getActivityData(activityId);
+            
+            if (!activityData) return;
+            
+            // Preencher modal com dados da atividade
+            document.getElementById('modal-activity-title').textContent = activityData.title;
+            document.getElementById('modal-activity-img').src = activityData.image;
+            document.getElementById('modal-activity-img').alt = activityData.title;
+            document.getElementById('modal-activity-age').textContent = activityData.age;
+            document.getElementById('modal-activity-time').textContent = activityData.time;
+            document.getElementById('modal-activity-difficulty').textContent = activityData.difficulty;
+            document.getElementById('modal-activity-category').textContent = activityData.category;
+            document.getElementById('modal-activity-description').textContent = activityData.description;
+            
+            // Preencher listas
+            const materialsEl = document.getElementById('modal-activity-materials');
+            materialsEl.innerHTML = '';
+            activityData.materials.forEach(material => {
+                const li = document.createElement('li');
+                li.textContent = material;
+                materialsEl.appendChild(li);
+            });
+            
+            const stepsEl = document.getElementById('modal-activity-steps');
+            stepsEl.innerHTML = '';
+            activityData.steps.forEach(step => {
+                const li = document.createElement('li');
+                li.textContent = step;
+                stepsEl.appendChild(li);
+            });
+            
+            const benefitsEl = document.getElementById('modal-activity-benefits');
+            benefitsEl.innerHTML = '';
+            activityData.benefits.forEach(benefit => {
+                const li = document.createElement('li');
+                li.textContent = benefit;
+                benefitsEl.appendChild(li);
+            });
+            
+            const tipsEl = document.getElementById('modal-activity-tips');
+            tipsEl.innerHTML = '';
+            activityData.tips.forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                tipsEl.appendChild(li);
+            });
+            
+            // Configurar botão de marcar como concluída
+            document.getElementById('modal-mark-complete').setAttribute('data-activity-id', activityId);
+            
+            // Verificar se já está concluída
+            const completedActivities = JSON.parse(localStorage.getItem('completed_activities') || '[]');
+            const isCompleted = completedActivities.includes(parseInt(activityId));
+            
+            if (isCompleted) {
+                document.getElementById('modal-mark-complete').textContent = 'Atividade Concluída';
+                document.getElementById('modal-mark-complete').disabled = true;
+            } else {
+                document.getElementById('modal-mark-complete').textContent = 'Marcar como Concluída';
+                document.getElementById('modal-mark-complete').disabled = false;
+            }
+            
+            // Exibir modal
+            document.getElementById('activity-details-modal').style.display = 'block';
+        }
+        
+        // Marcar atividade como concluída
+        function markActivityAsComplete(activityId) {
+            // Obter atividades concluídas do localStorage
+            const completedActivities = JSON.parse(localStorage.getItem('completed_activities') || '[]');
+            
+            // Verificar se já está concluída
+            if (completedActivities.includes(parseInt(activityId))) {
+                return;
+            }
+            
+            // Adicionar à lista de concluídas
+            completedActivities.push(parseInt(activityId));
+            
+            // Salvar no localStorage
+            localStorage.setItem('completed_activities', JSON.stringify(completedActivities));
+            
+            // Atualizar interface
+            const button = document.querySelector(`.mark-complete[data-activity-id="${activityId}"]`);
+            if (button) {
+                button.textContent = 'Concluída';
+                button.disabled = true;
+                button.classList.add('completed');
+            }
+            
+            // Mostrar notificação
+            showNotification('Atividade marcada como concluída!', 'success');
+            
+            // Atualizar progresso no perfil do usuário
+            updateUserProgress();
+        }
+        
+        // Carregar atividades concluídas
+        function loadCompletedActivities() {
+            // Obter atividades concluídas do localStorage
+            const completedActivities = JSON.parse(localStorage.getItem('completed_activities') || '[]');
+            
+            // Atualizar interface
+            completedActivities.forEach(activityId => {
+                const button = document.querySelector(`.mark-complete[data-activity-id="${activityId}"]`);
+                if (button) {
+                    button.textContent = 'Concluída';
+                    button.disabled = true;
+                    button.classList.add('completed');
+                }
+            });
+        }
+        
+        // Atualizar progresso do usuário
+        function updateUserProgress() {
+            // Obter atividades concluídas
+            const completedActivities = JSON.parse(localStorage.getItem('completed_activities') || '[]');
+            
+            // Obter usuário atual
+            const user = getLoggedInUser();
+            
+            if (!user) return;
+            
+            // Obter usuários do localStorage
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            
+            // Encontrar índice do usuário
+            const userIndex = users.findIndex(u => u.id === user.id);
+            
+            if (userIndex === -1) return;
+            
+            // Atualizar progresso
+            users[userIndex].progress = {
+                completedActivities: completedActivities.length,
+                lastActivity: new Date().toISOString()
+            };
+            
+            // Salvar no localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+        
+        // Função para mostrar notificações
+        function showNotification(message, type) {
+            // Criar elemento de notificação
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            // Adicionar ao DOM
+            document.body.appendChild(notification);
+            
+            // Remover após alguns segundos
+            setTimeout(() => {
+                notification.classList.add('fade-out');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+        
+        // Simular dados de atividades
+        function getActivityData(activityId) {
+            const activities = {
+                '1': {
+                    title: 'Brincadeira ao ar livre',
+                    image: 'static/images/activities-icon.png',
+                    age: '5-10 anos',
+                    time: '45 min',
+                    difficulty: 'Fácil',
+                    category: 'Ao ar livre',
+                    description: 'Explore a natureza com seu filho através de uma caça ao tesouro no parque ou quintal. Esta atividade estimula a curiosidade, o movimento físico e a conexão com o ambiente natural.',
+                    materials: [
+                        'Lista de itens para encontrar',
+                        'Sacola para coletar os itens',
+                        'Lápis e papel',
+                        'Opcional: lupa, binóculos'
+                    ],
+                    steps: [
+                        'Prepare uma lista de itens naturais para seu filho encontrar (folhas, pedras, flores, etc.)',
+                        'Explique as regras da caça ao tesouro',
+                        'Acompanhe seu filho na exploração',
+                        'Converse sobre cada item encontrado',
+                        'Ao final, discutam sobre a beleza da criação divina'
+                    ],
+                    benefits: [
+                        'Redução do tempo de tela',
+                        'Estímulo à atividade física',
+                        'Conexão com a natureza',
+                        'Fortalecimento do vínculo familiar',
+                        'Aprendizado sobre a criação divina'
+                    ],
+                    tips: [
+                        'Adapte a dificuldade dos itens à idade da criança',
+                        'Tire fotos dos itens encontrados para criar um álbum depois',
+                        'Inclua uma pequena reflexão ou versículo bíblico relacionado à natureza'
+                    ]
+                },
+                '2': {
+                    title: 'Pintura com os dedos',
+                    image: 'static/images/activities-icon.png',
+                    age: '2-7 anos',
+                    time: '30 min',
+                    difficulty: 'Fácil',
+                    category: 'Criativa',
+                    description: 'Estimule a criatividade do seu filho com uma sessão de pintura com os dedos usando tintas naturais. Esta atividade desenvolve a coordenação motora fina e a expressão artística.',
+                    materials: [
+                        'Tintas atóxicas ou caseiras (feitas com corantes naturais)',
+                        'Papel grosso ou cartolina',
+                        'Toalhas para limpeza',
+                        'Avental ou roupa velha'
+                    ],
+                    steps: [
+                        'Prepare o espaço cobrindo a mesa com jornal ou plástico',
+                        'Vista seu filho com roupas que possam sujar',
+                        'Disponibilize as tintas em potinhos pequenos',
+                        'Deixe a criança explorar livremente as cores e texturas',
+                        'Converse sobre as cores e formas que estão criando'
+                    ],
+                    benefits: [
+                        'Desenvolvimento sensorial',
+                        'Estímulo à criatividade',
+                        'Coordenação motora fina',
+                        'Expressão emocional',
+                        'Tempo de qualidade longe das telas'
+                    ],
+                    tips: [
+                        'Use tintas comestíveis para crianças muito pequenas',
+                        'Faça tintas caseiras com ingredientes naturais',
+                        'Tenha toalhas úmidas à mão para limpeza imediata',
+                        'Exponha a obra de arte depois de seca'
+                    ]
+                },
+                '3': {
+                    title: 'Leitura em família',
+                    image: 'static/images/activities-icon.png',
+                    age: '8-13 anos',
+                    time: '45 min',
+                    difficulty: 'Média',
+                    category: 'Educativa',
+                    description: 'Escolha um livro com valores cristãos e faça uma leitura compartilhada, discutindo os ensinamentos. Esta atividade fortalece o vínculo familiar e estimula o hábito da leitura.',
+                    materials: [
+                        'Livro apropriado para a idade da criança',
+                        'Ambiente confortável para leitura',
+                        'Opcional: caderno para anotações ou desenhos'
+                    ],
+                    steps: [
+                        'Escolha um livro com valores cristãos adequado à idade',
+                        'Crie um ambiente aconchegante para a leitura',
+                        'Leia em voz alta, alternando com seu filho se ele já souber ler',
+                        'Faça pausas para discutir os acontecimentos e valores apresentados',
+                        'Ao final, converse sobre as lições aprendidas'
+                    ],
+                    benefits: [
+                        'Desenvolvimento do hábito de leitura',
+                        'Fortalecimento de valores cristãos',
+                        'Ampliação do vocabulário',
+                        'Estímulo à imaginação',
+                        'Tempo de qualidade em família'
+                    ],
+                    tips: [
+                        'Crie vozes diferentes para os personagens',
+                        'Faça perguntas durante a leitura para manter o engajamento',
+                        'Relacione as histórias com situações do dia a dia',
+                        'Estabeleça um horário regular para leitura em família'
+                    ]
+                },
+                '4': {
+                    title: 'Jogo de tabuleiro',
+                    image: 'static/images/activities-icon.png',
+                    age: '5-13 anos',
+                    time: '90 min',
+                    difficulty: 'Média',
+                    category: 'Em família',
+                    description: 'Reúna a família para uma noite de jogos de tabuleiro, promovendo interação sem telas. Esta atividade desenvolve habilidades sociais, raciocínio lógico e ensina a lidar com vitórias e derrotas.',
+                    materials: [
+                        'Jogos de tabuleiro adequados à idade',
+                        'Mesa espaçosa',
+                        'Lanches saudáveis',
+                        'Ambiente confortável'
+                    ],
+                    steps: [
+                        'Escolha jogos apropriados para a idade das crianças',
+                        'Explique as regras de forma clara e simples',
+                        'Jogue uma partida demonstrativa se necessário',
+                        'Mantenha o clima leve e divertido',
+                        'Converse sobre estratégias e decisões durante o jogo'
+                    ],
+                    benefits: [
+                        'Desenvolvimento do raciocínio lógico',
+                        'Aprendizado sobre seguir regras',
+                        'Habilidades sociais e comunicação',
+                        'Saber lidar com vitórias e derrotas',
+                        'Tempo de qualidade longe das telas'
+                    ],
+                    tips: [
+                        'Comece com jogos mais simples e vá aumentando a complexidade',
+                        'Adapte as regras se necessário para tornar o jogo mais acessível',
+                        'Evite competitividade excessiva',
+                        'Estabeleça uma noite semanal de jogos em família'
+                    ]
+                },
+                '5': {
+                    title: 'Passeio educativo',
+                    image: 'static/images/activities-icon.png',
+                    age: '8+ anos',
+                    time: '120 min',
+                    difficulty: 'Difícil',
+                    category: 'Educativa',
+                    description: 'Visite um museu, jardim botânico ou centro histórico, promovendo aprendizado fora das telas. Esta atividade expande o conhecimento cultural e científico das crianças de forma prática e envolvente.',
+                    materials: [
+                        'Mapa do local a ser visitado',
+                        'Caderno de anotações e lápis',
+                        'Câmera fotográfica (opcional)',
+                        'Lanche e água',
+                        'Roupas e calçados confortáveis'
+                    ],
+                    steps: [
+                        'Pesquise antecipadamente sobre o local a ser visitado',
+                        'Prepare seu filho explicando o que verão',
+                        'Crie uma pequena lista de "tesouros" para encontrar durante a visita',
+                        'Durante o passeio, faça perguntas e incentive a curiosidade',
+                        'Ao final, converse sobre o que aprenderam e viram'
+                    ],
+                    benefits: [
+                        'Aprendizado prático e vivencial',
+                        'Expansão do conhecimento cultural ou científico',
+                        'Desenvolvimento da curiosidade',
+                        'Experiências compartilhadas em família',
+                        'Tempo de qualidade longe das telas'
+                    ],
+                    tips: [
+                        'Verifique se o local oferece visitas guiadas para crianças',
+                        'Não tente ver tudo de uma vez, foque na qualidade da experiência',
+                        'Permita que a criança lidere parte da exploração',
+                        'Tire fotos para revisitar a experiência depois'
+                    ]
+                },
+                '6': {
+                    title: 'Desenho em família',
+                    image: 'static/images/activities-icon.png',
+                    age: '5-10 anos',
+                    time: '60 min',
+                    difficulty: 'Fácil',
+                    category: 'Criativa',
+                    description: 'Dedique um tempo para desenhar junto com seu filho, criando uma história em conjunto. Esta atividade estimula a criatividade, a expressão artística e fortalece o vínculo familiar.',
+                    materials: [
+                        'Papel para desenho',
+                        'Lápis de cor, canetinhas, giz de cera',
+                        'Borracha e apontador',
+                        'Mesa confortável'
+                    ],
+                    steps: [
+                        'Escolham juntos um tema para a história',
+                        'Comecem criando os personagens principais',
+                        'Desenhem o cenário onde a história acontece',
+                        'Criem uma sequência de desenhos para contar a história',
+                        'Ao final, escrevam ou narrem a história completa'
+                    ],
+                    benefits: [
+                        'Desenvolvimento da criatividade',
+                        'Expressão artística e emocional',
+                        'Habilidades narrativas',
+                        'Coordenação motora fina',
+                        'Tempo de qualidade longe das telas'
+                    ],
+                    tips: [
+                        'Não se preocupe com a perfeição dos desenhos',
+                        'Incentive a imaginação com perguntas abertas',
+                        'Crie um livro com os desenhos e a história',
+                        'Exponha a obra finalizada em um lugar especial da casa'
+                    ]
+                }
+            };
+            
+            return activities[activityId];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Equilíbrio Digital - Suporte</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container auth-required">
+        <div class="header">
+            <h1>Guia Equilíbrio Digital</h1>
+            <div class="menu-icon" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- Menu lateral (oculto por padrão) -->
+        <div class="side-menu" id="side-menu">
+            <div class="user-profile">
+                <div class="avatar avatar-lg">
+                    <span class="user-initial">A</span>
+                </div>
+                <div class="user-info">
+                    <h3 class="user-name">Ana Silva</h3>
+                    <p class="user-role">Membro</p>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html" class="side-nav-item">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="activities.html" class="side-nav-item">
+                    <i class="fas fa-tasks"></i> Atividades
+                </a>
+                <a href="food.html" class="side-nav-item">
+                    <i class="fas fa-utensils"></i> Comidas Saudáveis
+                </a>
+                <a href="coloring.html" class="side-nav-item">
+                    <i class="fas fa-paint-brush"></i> Colorir
+                </a>
+                <a href="chat.html" class="side-nav-item">
+                    <i class="fas fa-comments"></i> Chat
+                </a>
+                <a href="progress.html" class="side-nav-item">
+                    <i class="fas fa-chart-line"></i> Progresso
+                </a>
+                <a href="support.html" class="side-nav-item active">
+                    <i class="fas fa-headset"></i> Suporte
+                </a>
+                <a href="profile.html" class="side-nav-item">
+                    <i class="fas fa-user"></i> Perfil
+                </a>
+                <a href="#" class="side-nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </a>
+            </nav>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="main-content support-content">
+            <h2 class="section-title">Suporte</h2>
+            
+            <!-- Abas de suporte -->
+            <div class="support-tabs">
+                <div class="support-tab active" data-tab="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contato</span>
+                </div>
+                <div class="support-tab" data-tab="faq">
+                    <i class="fas fa-question-circle"></i>
+                    <span>FAQ</span>
+                </div>
+                <div class="support-tab" data-tab="tickets">
+                    <i class="fas fa-ticket-alt"></i>
+                    <span>Meus Tickets</span>
+                </div>
+            </div>
+            
+            <!-- Conteúdo das abas -->
+            <div class="support-tab-content active" id="contact-content">
+                <div class="contact-form-container">
+                    <div class="contact-intro">
+                        <h3>Como podemos ajudar?</h3>
+                        <p>Preencha o formulário abaixo para entrar em contato com nossa equipe de suporte. Responderemos o mais breve possível.</p>
+                    </div>
+                    
+                    <form id="contact-form" class="support-form">
+                        <div class="form-group">
+                            <label for="contact-name">Nome completo</label>
+                            <input type="text" id="contact-name" placeholder="Seu nome completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">E-mail</label>
+                            <input type="email" id="contact-email" placeholder="Seu e-mail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-subject">Assunto</label>
+                            <select id="contact-subject" required>
+                                <option value="" disabled selected>Selecione um assunto</option>
+                                <option value="duvida">Dúvida sobre o conteúdo</option>
+                                <option value="problema">Problema técnico</option>
+                                <option value="sugestao">Sugestão</option>
+                                <option value="elogio">Elogio</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Mensagem</label>
+                            <textarea id="contact-message" placeholder="Descreva sua dúvida ou problema em detalhes..." rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group attachment-group">
+                            <label for="contact-attachment">Anexo (opcional)</label>
+                            <div class="file-input-container">
+                                <input type="file" id="contact-attachment" class="file-input">
+                                <div class="file-input-button">
+                                    <i class="fas fa-paperclip"></i> Anexar arquivo
+                                </div>
+                                <div class="file-name" id="file-name">Nenhum arquivo selecionado</div>
+                            </div>
+                            <p class="file-help">Formatos aceitos: JPG, PNG, PDF. Tamanho máximo: 5MB</p>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-lg" id="submit-contact">
+                                <i class="fas fa-paper-plane"></i> Enviar mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Outras formas de contato</h3>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>E-mail</h4>
+                            <p>suporte@guiaequilibriodigital.com.br</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Telefone</h4>
+                            <p>(11) 4002-8922</p>
+                            <p class="contact-hours">Segunda a sexta, das 9h às 18h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p>(11) 98765-4321</p>
+                            <a href="#" class="btn btn-outline btn-sm whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Iniciar conversa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="support-tab-content" id="faq-content">
+                <div class="faq-search">
+                    <input type="text" placeholder="Buscar perguntas frequentes..." id="faq-search-input">
+                    <button class="btn btn-primary btn-sm search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <div class="faq-categories">
+                    <button class="faq-category active" data-category="all">Todas</button>
+                    <button class="faq-category" data-category="account">Conta</button>
+                    <button class="faq-category" data-category="content">Conteúdo</button>
+                    <button class="faq-category" data-category="technical">Técnico</button>
+                    <button class="faq-category" data-category="payment">Pagamento</button>
+                </div>
+                
+                <div class="faq-list">
+                    <!-- Pergunta 1 -->
+                    <div class="faq-item" data-category="account">
+                        <div class="faq-question">
+                            <h3>Como altero minha senha?</h3>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Para alterar sua senha, siga estes passos:</p>
+                            <ol>
+                                <li>Acesse seu perfil clicando no ícone de usuário no menu lateral</li>
+                                <li>Clique na opção "Segurança"</li>
+                                <li>Selecione "Alterar senha"</li>
+                                <li>Digite sua senha atual e a nova senha</li>
+                                <li>Clique em "Salvar alterações"</li>
+                            </ol>
+                            <p>Se você esqueceu sua senha, use a opção "Esqueci minha senha" na tela de login para receber instruções de recuperação no seu e-mail.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pergunta 2 -->
+                    <div class="faq-item" data-category="content">
+                        <div class="faq-question">
+                            <h3>Com que frequência são adicionadas novas atividades?</h3>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Adicionamos novas atividades e conteúdos todas as semanas. Geralmente, as atualizações ocorrem às segundas-feiras, com:</p>
+                            <ul>
+                                <li>2-3 novas atividades práticas</li>
+                                <li>1-2 novas receitas saudáveis</li>
+                                <li>1 nova imagem para colorir</li>
+                            </ul>
+                            <p>Além disso, realizamos atualizações maiores mensalmente, com temas especiais e desafios sazonais. Fique atento às notificações para saber quando novos conteúdos estiverem disponíveis!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pergunta 3 -->
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <h3>O aplicativo funciona offline?</h3>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>O Guia Equilíbrio Digital é uma aplicação web que requer conexão com a internet para funcionar completamente. No entanto, algumas funcionalidades podem ser acessadas offline:</p>
+                            <ul>
+                                <li>Atividades já baixadas anteriormente</li>
+                                <li>Imagens para colorir salvas no dispositivo</li>
+                                <li>Receitas visualizadas recentemente</li>
+                            </ul>
+                            <p>Para garantir acesso offline, recomendamos que você navegue pelo conteúdo enquanto estiver online, permitindo que o navegador armazene em cache as páginas visitadas. Estamos trabalhando para melhorar a experiência offline em futuras atualizações.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pergunta 4 -->
+                    <div class="faq-item" data-category="payment">
+                        <div class="faq-question">
+                            <h3>Posso compartilhar minha conta com outros membros da família?</h3>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sim, sua assinatura do Guia Equilíbrio Digital permite o uso por todos os membros da sua família imediata (pais/responsáveis) que moram na mesma residência. No entanto, pedimos que:</p>
+                            <ul>
+                                <li>Não compartilhe suas credenciais com pessoas fora do seu núcleo familiar</li>
+                                <li>Não acesse a plataforma simultaneamente em mais de 3 dispositivos</li>
+                                <li>Não distribua o conteúdo para terceiros</li>
+                            </ul>
+                            <p>Caso precise de acesso para uma família estendida (avós, tios, etc.), entre em contato conosco para conhecer nossas opções de planos familiares ampliados.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pergunta 5 -->
+                    <div class="faq-item" data-category="content">
+                        <div class="faq-question">
+                            <h3>Como posso sugerir novas atividades ou temas?</h3>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Adoramos receber sugestões dos nossos usuários! Você pode contribuir de várias formas:</p>
+                            <ol>
+                                <li>Através do formulário de contato nesta página, selecionando "Sugestão" como assunto</li>
+                                <li>Participando das enquetes mensais que enviamos por e-mail</li>
+                                <li>Compartilhando suas ideias no fórum de pais, na seção "Sugestões de Conteúdo"</li>
+                                <li>Enviando um e-mail diretamente para sugestoes@guiaequilibriodigital.com.br</li>
+                            </ol>
+                            <p>Nossa equipe analisa todas as sugestões recebidas e implementa as mais solicitadas ou que melhor se alinham com nossa proposta pedagógica. Se sua sugestão for implementada, você receberá um agradecimento especial!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Pergunta 6 -->
+                    <div class="faq-item" data-category="technical">
+                        <div class="faq-question">
+                            <h3>Como faço para imprimir as atividades e imagens para colorir?</h3>
+                            <div class="faq-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Para imprimir qualquer conteúdo do Guia Equilíbrio Digital:</p>
+                            <ol>
+                                <li>Acesse a atividade ou imagem que deseja imprimir</li>
+                                <li>Clique no botão "Imprimir" (ícone de impressora) no canto superior direito</li>
+                                <li>Será aberta uma versão otimizada para impressão</li>
+                                <li>Use a função de impressão do seu navegador (Ctrl+P ou Cmd+P)</li>
+                                <li>Ajuste as configurações de impressão conforme necessário</li>
+                                <li>Clique em "Imprimir"</li>
+                            </ol>
+                            <p>Você também pode salvar como PDF selecionando "Salvar como PDF" na janela de impressão, caso queira armazenar digitalmente ou enviar por e-mail.</p>
+                            <p>Dica: Para economizar tinta, recomendamos usar o modo "Rascunho" ou "Economia de tinta" nas configurações da sua impressora para as imagens para colorir.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-not-found" style="display: none;">
+                    <div class="not-found-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Nenhuma pergunta encontrada</h3>
+                    <p>Não encontramos perguntas correspondentes à sua busca. Tente outros termos ou entre em contato conosco.</p>
+                    <button class="btn btn-primary" id="contact-us-btn">
+                        Entrar em contato
+                    </button>
+                </div>
+            </div>
+            
+            <div class="support-tab-content" id="tickets-content">
+                <div class="tickets-header">
+                    <h3>Meus tickets de suporte</h3>
+                    <button class="btn btn-primary" id="new-ticket-btn">
+                        <i class="fas fa-plus"></i> Novo ticket
+                    </button>
+                </div>
+                
+                <div class="tickets-filters">
+                    <div class="filter-group">
+                        <label for="ticket-status">Status:</label>
+                        <select id="ticket-status">
+                            <option value="all">Todos</option>
+                            <option value="open">Abertos</option>
+                            <option value="pending">Pendentes</option>
+                            <option value="closed">Resolvidos</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="ticket-date">Data:</label>
+                        <select id="ticket-date">
+                            <option value="all">Todas</option>
+                            <option value="today">Hoje</option>
+                            <option value="week">Esta semana</option>
+                            <option value="month">Este mês</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="tickets-list">
+                    <!-- Ticket 1 -->
+                    <div class="ticket-card" data-status="open" data-date="today">
+                        <div class="ticket-header">
+                            <div class="ticket-id">#1234</div>
+                            <div class="ticket-status open">Aberto</div>
+                        </div>
+                        <div class="ticket-body">
+                            <h4 class="ticket-title">Problema ao acessar imagens para colorir</h4>
+                            <p class="ticket-excerpt">Não consigo visualizar as imagens para colorir na seção cristã. Quando clico, a página fica carregando indefinidamente...</p>
+                        </div>
+                        <div class="ticket-footer">
+                            <div class="ticket-date">Hoje, 10:30</div>
+                            <button class="btn btn-outline btn-sm view-ticket-btn">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Ticket 2 -->
+                    <div class="ticket-card" data-status="pending" data-date="week">
+                        <div class="ticket-header">
+                            <div class="ticket-id">#1198</div>
+                            <div class="ticket-status pending">Pendente</div>
+                        </div>
+                        <div class="ticket-body">
+                            <h4 class="ticket-title">Dúvida sobre receitas sem glúten</h4>
+                            <p class="ticket-excerpt">Gostaria de saber se vocês têm planos de adicionar mais receitas sem glúten na seção de comidas saudáveis...</p>
+                        </div>
+                        <div class="ticket-footer">
+                            <div class="ticket-date">20/05, 15:45</div>
+                            <button class="btn btn-outline btn-sm view-ticket-btn">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Ticket 3 -->
+                    <div class="ticket-card" data-status="closed" data-date="month">
+                        <div class="ticket-header">
+                            <div class="ticket-id">#1056</div>
+                            <div class="ticket-status closed">Resolvido</div>
+                        </div>
+                        <div class="ticket-body">
+                            <h4 class="ticket-title">Sugestão de atividade para dias chuvosos</h4>
+                            <p class="ticket-excerpt">Gostaria de sugerir algumas atividades para dias chuvosos que funcionaram muito bem com meus filhos...</p>
+                        </div>
+                        <div class="ticket-footer">
+                            <div class="ticket-date">10/05, 09:20</div>
+                            <button class="btn btn-outline btn-sm view-ticket-btn">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tickets-empty" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3>Nenhum ticket encontrado</h3>
+                    <p>Você ainda não abriu nenhum ticket de suporte ou não há tickets correspondentes aos filtros selecionados.</p>
+                    <button class="btn btn-primary" id="create-ticket-btn">
+                        Criar novo ticket
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Visualização de Ticket -->
+        <div class="modal" id="view-ticket-modal">
+            <div class="modal-content ticket-modal-content">
+                <div class="modal-header">
+                    <h3>Ticket #1234 - Problema ao acessar imagens para colorir</h3>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="ticket-info">
+                        <div class="ticket-info-item">
+                            <span class="info-label">Status:</span>
+                            <span class="info-value status-badge open">Aberto</span>
+                        </div>
+                        <div class="ticket-info-item">
+                            <span class="info-label">Criado em:</span>
+                            <span class="info-value">22/05/2025, 10:30</span>
+                        </div>
+                        <div class="ticket-info-item">
+                            <span class="info-label">Última atualização:</span>
+                            <span class="info-value">22/05/2025, 11:15</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ticket-conversation">
+                        <!-- Mensagem inicial -->
+                        <div class="ticket-message user-message">
+                            <div class="message-header">
+                                <div class="message-author">
+                                    <div class="avatar">
+                                        <span class="user-initial">A</span>
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Ana Silva (Você)</h4>
+                                        <span class="message-date">22/05/2025, 10:30</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message-content">
+                                <p>Olá! Estou tendo problemas para acessar as imagens para colorir na seção cristã. Quando clico em qualquer imagem, a página fica carregando indefinidamente e nada acontece.</p>
+                                <p>Já tentei em diferentes navegadores (Chrome e Firefox) e o problema persiste. Outras seções do site funcionam normalmente.</p>
+                                <p>Poderiam me ajudar a resolver esse problema?</p>
+                            </div>
+                            <div class="message-attachments">
+                                <div class="attachment">
+                                    <i class="fas fa-file-image"></i>
+                                    <span class="attachment-name">erro_screenshot.jpg</span>
+                                    <a href="#" class="attachment-action">Visualizar</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Resposta do suporte -->
+                        <div class="ticket-message support-message">
+                            <div class="message-header">
+                                <div class="message-author">
+                                    <div class="avatar support-avatar">
+                                        <i class="fas fa-headset"></i>
+                                    </div>
+                                    <div class="author-info">
+                                        <h4>Carlos (Suporte)</h4>
+                                        <span class="message-date">22/05/2025, 11:15</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="message-content">
+                                <p>Olá Ana!</p>
+                                <p>Obrigado por reportar esse problema. Analisei o screenshot que você enviou e identificamos um problema temporário com o carregamento das imagens na seção cristã.</p>
+                                <p>Nossa equipe técnica já está trabalhando para resolver o problema o mais rápido possível. Como solução temporária, você pode acessar as imagens para colorir através deste link direto: <a href="#">https://guiaequilibriodigital.com.br/colorir-direto</a></p>
+                                <p>Pedimos desculpas pelo inconveniente e agradecemos sua compreensão. Atualizaremos este ticket assim que o problema for resolvido.</p>
+                                <p>Caso tenha alguma dúvida adicional, não hesite em responder a este ticket.</p>
+                                <p>Atenciosamente,<br>Carlos<br>Equipe de Suporte</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulário de resposta -->
+                    <div class="ticket-reply">
+                        <h4>Responder</h4>
+                        <textarea placeholder="Digite sua resposta..." rows="3"></textarea>
+                        <div class="reply-actions">
+                            <div class="file-input-container">
+                                <input type="file" id="ticket-attachment" class="file-input">
+                                <div class="file-input-button">
+                                    <i class="fas fa-paperclip"></i> Anexar arquivo
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" id="reply-ticket-btn">
+                                Enviar resposta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="close-ticket-btn">
+                        <i class="fas fa-check-circle"></i> Marcar como resolvido
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de navegação inferior -->
+        <div class="bottom-nav">
+            <a href="dashboard.html" class="nav-link" data-target="dashboard">
+                <i class="fas fa-home nav-icon"></i>
+                <span>Início</span>
+            </a>
+            <a href="activities.html" class="nav-link" data-target="activities">
+                <i class="fas fa-tasks nav-icon"></i>
+                <span>Atividades</span>
+            </a>
+            <a href="food.html" class="nav-link" data-target="food">
+                <i class="fas fa-utensils nav-icon"></i>
+                <span>Comidas</span>
+            </a>
+            <a href="chat.html" class="nav-link" data-target="chat">
+                <i class="fas fa-comments nav-icon"></i>
+                <span>Chat</span>
+            </a>
+            <a href="support.html" class="nav-link active" data-target="support">
+                <i class="fas fa-headset nav-icon"></i>
+                <span>Suporte</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay para o menu lateral -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Verificar autenticação
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!isLoggedIn()) {
+                window.location.href = 'login.html';
+            } else {
+                // Carregar dados do usuário
+                const user = getLoggedInUser();
+                if (user) {
+                    document.querySelectorAll('.user-name').forEach(el => {
+                        el.textContent = user.name;
+                    });
+                    
+                    document.querySelectorAll('.user-initial').forEach(el => {
+                        el.textContent = user.name.charAt(0);
+                    });
+                    
+                    document.querySelectorAll('.user-role').forEach(el => {
+                        el.textContent = user.role === 'admin' ? 'Administrador' : 'Membro';
+                    });
+                }
+                
+                // Inicializar funcionalidades da página
+                initSupportPage();
+            }
+            
+            // Configurar botão de logout
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                logoutUser();
+            });
+            
+            // Configurar toggle do menu lateral
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideMenu = document.getElementById('side-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            
+            menuToggle.addEventListener('click', function() {
+                sideMenu.classList.toggle('open');
+                menuOverlay.classList.toggle('active');
+            });
+            
+            menuOverlay.addEventListener('click', function() {
+                sideMenu.classList.remove('open');
+                menuOverlay.classList.remove('active');
+            });
+        });
+        
+        // Inicializar funcionalidades da página de suporte
+        function initSupportPage() {
+            // Configurar abas de suporte
+            setupSupportTabs();
+            
+            // Configurar formulário de contato
+            setupContactForm();
+            
+            // Configurar FAQ
+            setupFAQ();
+            
+            // Configurar tickets
+            setupTickets();
+            
+            // Configurar modais
+            setupModals();
+            
+            // Adicionar animações e interatividade
+            addInteractivity();
+        }
+        
+        // Configurar abas de suporte
+        function setupSupportTabs() {
+            const supportTabs = document.querySelectorAll('.support-tab');
+            const tabContents = document.querySelectorAll('.support-tab-content');
+            
+            supportTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remover classe ativa de todas as abas
+                    supportTabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Adicionar classe ativa à aba clicada
+                    this.classList.add('active');
+                    
+                    // Mostrar conteúdo correspondente
+                    const tabName = this.getAttribute('data-tab');
+                    document.getElementById(`${tabName}-content`).classList.add('active');
+                });
+            });
+        }
+        
+        // Configurar formulário de contato
+        function setupContactForm() {
+            // Manipular upload de arquivo
+            const fileInput = document.getElementById('contact-attachment');
+            const fileName = document.getElementById('file-name');
+            
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    fileName.textContent = this.files[0].name;
+                } else {
+                    fileName.textContent = 'Nenhum arquivo selecionado';
+                }
+            });
+            
+            // Manipular envio do formulário
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validar formulário
+                const name = document.getElementById('contact-name').value;
+                const email = document.getElementById('contact-email').value;
+                const subject = document.getElementById('contact-subject').value;
+                const message = document.getElementById('contact-message').value;
+                
+                if (!name || !email || !subject || !message) {
+                    showNotification('Por favor, preencha todos os campos obrigatórios.', 'error');
+                    return;
+                }
+                
+                // Simular envio
+                const submitBtn = document.getElementById('submit-contact');
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                
+                setTimeout(() => {
+                    // Simular sucesso
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar mensagem';
+                    
+                    // Limpar formulário
+                    contactForm.reset();
+                    fileName.textContent = 'Nenhum arquivo selecionado';
+                    
+                    // Mostrar notificação
+                    showNotification('Mensagem enviada com sucesso! Responderemos em breve.', 'success');
+                    
+                    // Criar ticket simulado
+                    createSimulatedTicket(subject, message);
+                }, 1500);
+            });
+            
+            // Configurar botão do WhatsApp
+            document.querySelector('.whatsapp-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Abrir WhatsApp em nova aba (simulação)
+                showNotification('Redirecionando para o WhatsApp...', 'info');
+            });
+        }
+        
+        // Configurar FAQ
+        function setupFAQ() {
+            // Toggle de perguntas
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.closest('.faq-item');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const toggle = this.querySelector('.faq-toggle i');
+                    
+                    // Fechar outras respostas
+                    document.querySelectorAll('.faq-answer').forEach(a => {
+                        if (a !== answer) {
+                            a.style.maxHeight = null;
+                            a.closest('.faq-item').classList.remove('active');
+                            a.closest('.faq-item').querySelector('.faq-toggle i').className = 'fas fa-chevron-down';
+                        }
+                    });
+                    
+                    // Toggle da resposta atual
+                    faqItem.classList.toggle('active');
+                    
+                    if (faqItem.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        toggle.className = 'fas fa-chevron-up';
+                    } else {
+                        answer.style.maxHeight = null;
+                        toggle.className = 'fas fa-chevron-down';
+                    }
+                });
+            });
+            
+            // Filtrar por categoria
+            const faqCategories = document.querySelectorAll('.faq-category');
+            
+            faqCategories.forEach(category => {
+                category.addEventListener('click', function() {
+                    // Remover classe ativa de todas as categorias
+                    faqCategories.forEach(c => c.classList.remove('active'));
+                    
+                    // Adicionar classe ativa à categoria clicada
+                    this.classList.add('active');
+                    
+                    // Filtrar perguntas
+                    const categoryName = this.getAttribute('data-category');
+                    filterFAQItems(categoryName);
+                });
+            });
+            
+            // Busca de FAQ
+            const faqSearchInput = document.getElementById('faq-search-input');
+            
+            faqSearchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                searchFAQItems(searchTerm);
+            });
+            
+            // Botão de contato na seção "Não encontrado"
+            document.getElementById('contact-us-btn').addEventListener('click', function() {
+                // Mudar para a aba de contato
+                document.querySelector('.support-tab[data-tab="contact"]').click();
+            });
+        }
+        
+        // Filtrar perguntas por categoria
+        function filterFAQItems(category) {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const faqNotFound = document.querySelector('.faq-not-found');
+            let visibleItems = 0;
+            
+            faqItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    visibleItems++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Mostrar mensagem de "não encontrado" se não houver itens visíveis
+            if (visibleItems === 0) {
+                faqNotFound.style.display = 'flex';
+            } else {
+                faqNotFound.style.display = 'none';
+            }
+        }
+        
+        // Buscar perguntas
+        function searchFAQItems(searchTerm) {
+            const faqItems = document.querySelectorAll('.faq-item');
+            const faqNotFound = document.querySelector('.faq-not-found');
+            let visibleItems = 0;
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question h3').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    visibleItems++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Mostrar mensagem de "não encontrado" se não houver itens visíveis
+            if (visibleItems === 0) {
+                faqNotFound.style.display = 'flex';
+            } else {
+                faqNotFound.style.display = 'none';
+            }
+        }
+        
+        // Configurar tickets
+        function setupTickets() {
+            // Filtrar tickets por status
+            const ticketStatusFilter = document.getElementById('ticket-status');
+            
+            ticketStatusFilter.addEventListener('change', function() {
+                filterTickets();
+            });
+            
+            // Filtrar tickets por data
+            const ticketDateFilter = document.getElementById('ticket-date');
+            
+            ticketDateFilter.addEventListener('change', function() {
+                filterTickets();
+            });
+            
+            // Botões de visualizar ticket
+            document.querySelectorAll('.view-ticket-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    openTicketModal(this.closest('.ticket-card'));
+                });
+            });
+            
+            // Botão de novo ticket
+            document.getElementById('new-ticket-btn').addEventListener('click', function() {
+                // Mudar para a aba de contato
+                document.querySelector('.support-tab[data-tab="contact"]').click();
+            });
+            
+            // Botão de criar ticket na seção vazia
+            document.getElementById('create-ticket-btn')?.addEventListener('click', function() {
+                // Mudar para a aba de contato
+                document.querySelector('.support-tab[data-tab="contact"]').click();
+            });
+        }
+        
+        // Filtrar tickets
+        function filterTickets() {
+            const statusFilter = document.getElementById('ticket-status').value;
+            const dateFilter = document.getElementById('ticket-date').value;
+            const ticketCards = document.querySelectorAll('.ticket-card');
+            const ticketsEmpty = document.querySelector('.tickets-empty');
+            let visibleTickets = 0;
+            
+            ticketCards.forEach(card => {
+                const status = card.getAttribute('data-status');
+                const date = card.getAttribute('data-date');
+                
+                const statusMatch = statusFilter === 'all' || status === statusFilter;
+                const dateMatch = dateFilter === 'all' || date === dateFilter;
+                
+                if (statusMatch && dateMatch) {
+                    card.style.display = 'flex';
+                    visibleTickets++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Mostrar mensagem de "não encontrado" se não houver tickets visíveis
+            if (visibleTickets === 0) {
+                ticketsEmpty.style.display = 'flex';
+            } else {
+                ticketsEmpty.style.display = 'none';
+            }
+        }
+        
+        // Configurar modais
+        function setupModals() {
+            // Modal de visualização de ticket
+            const viewTicketModal = document.getElementById('view-ticket-modal');
+            
+            // Botão de fechar
+            document.querySelectorAll('.modal-close').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.modal').style.display = 'none';
+                });
+            });
+            
+            // Fechar ao clicar fora
+            window.addEventListener('click', function(e) {
+                if (e.target === viewTicketModal) {
+                    viewTicketModal.style.display = 'none';
+                }
+            });
+            
+            // Botão de responder ticket
+            document.getElementById('reply-ticket-btn').addEventListener('click', function() {
+                replyToTicket();
+            });
+            
+            // Botão de marcar como resolvido
+            document.getElementById('close-ticket-btn').addEventListener('click', function() {
+                closeTicket();
+            });
+        }
+        
+        // Abrir modal de ticket
+        function openTicketModal(ticketCard) {
+            // Em uma implementação real, você buscaria os dados do ticket do backend
+            // Aqui estamos apenas simulando com dados estáticos
+            
+            // Exibir modal
+            document.getElementById('view-ticket-modal').style.display = 'block';
+        }
+        
+        // Responder a um ticket
+        function replyToTicket() {
+            const replyText = document.querySelector('.ticket-reply textarea').value;
+            
+            if (!replyText) {
+                showNotification('Por favor, digite sua resposta.', 'error');
+                return;
+            }
+            
+            // Em uma implementação real, você enviaria a resposta para o backend
+            // Aqui estamos apenas simulando
+            
+            // Limpar formulário
+            document.querySelector('.ticket-reply textarea').value = '';
+            
+            // Mostrar notificação
+            showNotification('Resposta enviada com sucesso!', 'success');
+            
+            // Adicionar nova resposta à conversa (simulação)
+            addNewReplyToTicket(replyText);
+        }
+        
+        // Adicionar nova resposta à conversa do ticket
+        function addNewReplyToTicket(replyText) {
+            const ticketConversation = document.querySelector('.ticket-conversation');
+            const user = getLoggedInUser();
+            const now = new Date();
+            const dateString = `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()}, ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            
+            // Criar HTML da nova resposta
+            const newReplyHtml = `
+                <div class="ticket-message user-message new-reply">
+                    <div class="message-header">
+                        <div class="message-author">
+                            <div class="avatar">
+                                <span class="user-initial">${user.name.charAt(0)}</span>
+                            </div>
+                            <div class="author-info">
+                                <h4>${user.name} (Você)</h4>
+                                <span class="message-date">${dateString}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message-content">
+                        <p>${replyText}</p>
+                    </div>
+                </div>
+            `;
+            
+            // Adicionar à conversa
+            ticketConversation.insertAdjacentHTML('beforeend', newReplyHtml);
+            
+            // Rolar para a nova mensagem
+            const newReply = document.querySelector('.ticket-message.new-reply');
+            newReply.scrollIntoView({ behavior: 'smooth' });
+            
+            // Remover classe new-reply
+            setTimeout(() => {
+                newReply.classList.remove('new-reply');
+            }, 2000);
+            
+            // Atualizar status do ticket para "Pendente"
+            document.querySelector('.ticket-info .status-badge').className = 'info-value status-badge pending';
+            document.querySelector('.ticket-info .status-badge').textContent = 'Pendente';
+            
+            // Atualizar última atualização
+            document.querySelectorAll('.ticket-info-item')[2].querySelector('.info-value').textContent = dateString;
+            
+            // Simular resposta do suporte após alguns segundos
+            setTimeout(() => {
+                simulateSupportReply();
+            }, 5000);
+        }
+        
+        // Simular resposta do suporte
+        function simulateSupportReply() {
+            const ticketConversation = document.querySelector('.ticket-conversation');
+            const now = new Date();
+            const dateString = `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()}, ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            
+            // Criar HTML da resposta do suporte
+            const supportReplyHtml = `
+                <div class="ticket-message support-message new-reply">
+                    <div class="message-header">
+                        <div class="message-author">
+                            <div class="avatar support-avatar">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Carlos (Suporte)</h4>
+                                <span class="message-date">${dateString}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message-content">
+                        <p>Olá!</p>
+                        <p>Obrigado por sua resposta. Estamos verificando o problema e retornaremos em breve com mais informações.</p>
+                        <p>Atenciosamente,<br>Carlos<br>Equipe de Suporte</p>
+                    </div>
+                </div>
+            `;
+            
+            // Adicionar à conversa
+            ticketConversation.insertAdjacentHTML('beforeend', supportReplyHtml);
+            
+            // Rolar para a nova mensagem
+            const newReply = document.querySelector('.ticket-message.new-reply');
+            newReply.scrollIntoView({ behavior: 'smooth' });
+            
+            // Remover classe new-reply
+            setTimeout(() => {
+                newReply.classList.remove('new-reply');
+            }, 2000);
+            
+            // Atualizar última atualização
+            document.querySelectorAll('.ticket-info-item')[2].querySelector('.info-value').textContent = dateString;
+            
+            // Mostrar notificação
+            showNotification('Nova resposta do suporte recebida!', 'info');
+        }
+        
+        // Fechar ticket
+        function closeTicket() {
+            // Em uma implementação real, você enviaria a solicitação para o backend
+            // Aqui estamos apenas simulando
+            
+            // Atualizar status do ticket para "Resolvido"
+            document.querySelector('.ticket-info .status-badge').className = 'info-value status-badge closed';
+            document.querySelector('.ticket-info .status-badge').textContent = 'Resolvido';
+            
+            // Atualizar última atualização
+            const now = new Date();
+            const dateString = `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()}, ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            document.querySelectorAll('.ticket-info-item')[2].querySelector('.info-value').textContent = dateString;
+            
+            // Desabilitar formulário de resposta
+            document.querySelector('.ticket-reply textarea').disabled = true;
+            document.querySelector('.ticket-reply textarea').placeholder = 'Este ticket foi marcado como resolvido.';
+            document.getElementById('reply-ticket-btn').disabled = true;
+            document.getElementById('ticket-attachment').disabled = true;
+            
+            // Desabilitar botão de fechar
+            document.getElementById('close-ticket-btn').disabled = true;
+            document.getElementById('close-ticket-btn').innerHTML = '<i class="fas fa-check-circle"></i> Ticket resolvido';
+            
+            // Mostrar notificação
+            showNotification('Ticket marcado como resolvido com sucesso!', 'success');
+            
+            // Atualizar lista de tickets
+            updateTicketInList();
+        }
+        
+        // Atualizar ticket na lista
+        function updateTicketInList() {
+            // Em uma implementação real, você atualizaria a lista de tickets com dados do backend
+            // Aqui estamos apenas simulando
+            
+            // Atualizar status do ticket na lista
+            const ticketCard = document.querySelector('.ticket-card[data-status="open"]');
+            if (ticketCard) {
+                ticketCard.setAttribute('data-status', 'closed');
+                ticketCard.querySelector('.ticket-status').className = 'ticket-status closed';
+                ticketCard.querySelector('.ticket-status').textContent = 'Resolvido';
+                
+                // Aplicar filtros atuais
+                filterTickets();
+            }
+        }
+        
+        // Criar ticket simulado a partir do formulário de contato
+        function createSimulatedTicket(subject, message) {
+            // Em uma implementação real, você criaria um ticket no backend
+            // Aqui estamos apenas simulando
+            
+            // Verificar se a aba de tickets existe
+            const ticketsTab = document.querySelector('.support-tab[data-tab="tickets"]');
+            if (!ticketsTab) return;
+            
+            // Gerar ID aleatório para o ticket
+            const ticketId = Math.floor(1000 + Math.random() * 9000);
+            
+            // Obter data atual
+            const now = new Date();
+            const timeString = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            
+            // Criar HTML do novo ticket
+            const newTicketHtml = `
+                <div class="ticket-card" data-status="open" data-date="today">
+                    <div class="ticket-header">
+                        <div class="ticket-id">#${ticketId}</div>
+                        <div class="ticket-status open">Aberto</div>
+                    </div>
+                    <div class="ticket-body">
+                        <h4 class="ticket-title">${subject}</h4>
+                        <p class="ticket-excerpt">${message.substring(0, 100)}${message.length > 100 ? '...' : ''}</p>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-date">Hoje, ${timeString}</div>
+                        <button class="btn btn-outline btn-sm view-ticket-btn">
+                            Ver detalhes
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Adicionar à lista de tickets
+            const ticketsList = document.querySelector('.tickets-list');
+            ticketsList.insertAdjacentHTML('afterbegin', newTicketHtml);
+            
+            // Configurar botão de visualizar
+            const newTicket = ticketsList.querySelector('.ticket-card:first-child');
+            newTicket.querySelector('.view-ticket-btn').addEventListener('click', function() {
+                openTicketModal(newTicket);
+            });
+            
+            // Ocultar mensagem de "não encontrado"
+            document.querySelector('.tickets-empty').style.display = 'none';
+            
+            // Aplicar filtros atuais
+            filterTickets();
+        }
+        
+        // Adicionar interatividade
+        function addInteractivity() {
+            // Efeito de hover nos cards de tickets
+            document.querySelectorAll('.ticket-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.classList.add('hover');
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.classList.remove('hover');
+                });
+            });
+            
+            // Animação de perguntas do FAQ
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('mouseenter', function() {
+                    this.classList.add('hover');
+                });
+                
+                question.addEventListener('mouseleave', function() {
+                    this.classList.remove('hover');
+                });
+            });
+            
+            // Animação de botões
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('mousedown', function() {
+                    this.classList.add('pressed');
+                });
+                
+                button.addEventListener('mouseup', function() {
+                    this.classList.remove('pressed');
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.classList.remove('pressed');
+                });
+            });
+        }
+        
+        // Função para mostrar notificações
+        function showNotification(message, type) {
+            // Criar elemento de notificação
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            // Adicionar ao DOM
+            document.body.appendChild(notification);
+            
+            // Remover após alguns segundos
+            setTimeout(() => {
+                notification.classList.add('fade-out');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

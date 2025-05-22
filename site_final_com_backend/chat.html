@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Equilíbrio Digital - Chat entre Pais</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container auth-required">
+        <div class="header">
+            <h1>Guia Equilíbrio Digital</h1>
+            <div class="menu-icon" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- Menu lateral (oculto por padrão) -->
+        <div class="side-menu" id="side-menu">
+            <div class="user-profile">
+                <div class="avatar avatar-lg">
+                    <span class="user-initial">A</span>
+                </div>
+                <div class="user-info">
+                    <h3 class="user-name">Ana Silva</h3>
+                    <p class="user-role">Membro</p>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html" class="side-nav-item">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="activities.html" class="side-nav-item">
+                    <i class="fas fa-tasks"></i> Atividades
+                </a>
+                <a href="food.html" class="side-nav-item">
+                    <i class="fas fa-utensils"></i> Comidas Saudáveis
+                </a>
+                <a href="coloring.html" class="side-nav-item">
+                    <i class="fas fa-paint-brush"></i> Colorir
+                </a>
+                <a href="chat.html" class="side-nav-item active">
+                    <i class="fas fa-comments"></i> Chat
+                </a>
+                <a href="progress.html" class="side-nav-item">
+                    <i class="fas fa-chart-line"></i> Progresso
+                </a>
+                <a href="profile.html" class="side-nav-item">
+                    <i class="fas fa-user"></i> Perfil
+                </a>
+                <a href="#" class="side-nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </a>
+            </nav>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="main-content chat-content">
+            <h2 class="section-title">Chat entre Pais</h2>
+            
+            <!-- Navegação do chat -->
+            <div class="chat-tabs">
+                <div class="chat-tab active" data-tab="topics">
+                    <i class="fas fa-list-alt"></i>
+                    <span>Tópicos</span>
+                </div>
+                <div class="chat-tab" data-tab="direct">
+                    <i class="fas fa-envelope"></i>
+                    <span>Mensagens</span>
+                </div>
+                <div class="chat-tab" data-tab="favorites">
+                    <i class="fas fa-star"></i>
+                    <span>Favoritos</span>
+                </div>
+            </div>
+            
+            <!-- Conteúdo do chat - Tópicos -->
+            <div class="chat-tab-content active" id="topics-content">
+                <!-- Barra de pesquisa e botão de novo tópico -->
+                <div class="chat-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Buscar tópicos..." class="search-input">
+                        <button class="btn btn-primary btn-sm search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <button class="btn btn-primary" id="new-topic-btn">
+                        <i class="fas fa-plus"></i> Novo Tópico
+                    </button>
+                </div>
+                
+                <!-- Filtros de tópicos -->
+                <div class="topic-filters">
+                    <div class="filter-pill active" data-filter="all">Todos</div>
+                    <div class="filter-pill" data-filter="popular">Populares</div>
+                    <div class="filter-pill" data-filter="recent">Recentes</div>
+                    <div class="filter-pill" data-filter="unanswered">Sem resposta</div>
+                </div>
+                
+                <!-- Lista de tópicos -->
+                <div class="topics-list">
+                    <!-- Tópico 1 -->
+                    <div class="topic-card" data-topic-id="1" data-filter="popular recent">
+                        <div class="topic-header">
+                            <div class="topic-author">
+                                <div class="avatar">
+                                    <span class="user-initial">M</span>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Maria Oliveira</h4>
+                                    <span class="topic-date">Hoje, 10:30</span>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span class="topic-views"><i class="fas fa-eye"></i> 24</span>
+                                <span class="topic-replies"><i class="fas fa-reply"></i> 8</span>
+                            </div>
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title">Dicas para reduzir o tempo de tela</h3>
+                            <p class="topic-excerpt">Olá a todos! Estou tendo dificuldades para reduzir o tempo que meu filho de 8 anos passa em frente às telas. Alguém tem dicas que funcionaram bem com seus filhos?</p>
+                            <div class="topic-tags">
+                                <span class="topic-tag">Tempo de Tela</span>
+                                <span class="topic-tag">Crianças</span>
+                                <span class="topic-tag">Dicas</span>
+                            </div>
+                        </div>
+                        <div class="topic-footer">
+                            <button class="btn btn-outline btn-sm topic-action favorite-btn">
+                                <i class="far fa-star"></i> Favoritar
+                            </button>
+                            <button class="btn btn-primary btn-sm topic-action view-topic-btn">
+                                Ver Tópico
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tópico 2 -->
+                    <div class="topic-card" data-topic-id="2" data-filter="popular">
+                        <div class="topic-header">
+                            <div class="topic-author">
+                                <div class="avatar">
+                                    <span class="user-initial">P</span>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Paulo Santos</h4>
+                                    <span class="topic-date">Ontem, 15:45</span>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span class="topic-views"><i class="fas fa-eye"></i> 32</span>
+                                <span class="topic-replies"><i class="fas fa-reply"></i> 12</span>
+                            </div>
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title">Atividades ao ar livre para dias chuvosos</h3>
+                            <p class="topic-excerpt">Com a chegada do inverno, fica mais difícil manter as crianças longe das telas nos dias chuvosos. Quais atividades vocês fazem dentro de casa para mantê-los entretidos?</p>
+                            <div class="topic-tags">
+                                <span class="topic-tag">Atividades</span>
+                                <span class="topic-tag">Dias Chuvosos</span>
+                                <span class="topic-tag">Crianças</span>
+                            </div>
+                        </div>
+                        <div class="topic-footer">
+                            <button class="btn btn-outline btn-sm topic-action favorite-btn">
+                                <i class="far fa-star"></i> Favoritar
+                            </button>
+                            <button class="btn btn-primary btn-sm topic-action view-topic-btn">
+                                Ver Tópico
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tópico 3 -->
+                    <div class="topic-card" data-topic-id="3" data-filter="recent unanswered">
+                        <div class="topic-header">
+                            <div class="topic-author">
+                                <div class="avatar">
+                                    <span class="user-initial">C</span>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Carla Mendes</h4>
+                                    <span class="topic-date">Hoje, 09:15</span>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span class="topic-views"><i class="fas fa-eye"></i> 7</span>
+                                <span class="topic-replies"><i class="fas fa-reply"></i> 0</span>
+                            </div>
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title">Receitas saudáveis que as crianças adoram</h3>
+                            <p class="topic-excerpt">Estou tentando melhorar a alimentação da minha família, mas meus filhos são muito seletivos com comida. Alguém tem receitas saudáveis que crianças geralmente gostam?</p>
+                            <div class="topic-tags">
+                                <span class="topic-tag">Alimentação</span>
+                                <span class="topic-tag">Receitas</span>
+                                <span class="topic-tag">Crianças Seletivas</span>
+                            </div>
+                        </div>
+                        <div class="topic-footer">
+                            <button class="btn btn-outline btn-sm topic-action favorite-btn">
+                                <i class="far fa-star"></i> Favoritar
+                            </button>
+                            <button class="btn btn-primary btn-sm topic-action view-topic-btn">
+                                Ver Tópico
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tópico 4 -->
+                    <div class="topic-card" data-topic-id="4" data-filter="recent">
+                        <div class="topic-header">
+                            <div class="topic-author">
+                                <div class="avatar">
+                                    <span class="user-initial">R</span>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Roberto Alves</h4>
+                                    <span class="topic-date">Ontem, 18:20</span>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span class="topic-views"><i class="fas fa-eye"></i> 15</span>
+                                <span class="topic-replies"><i class="fas fa-reply"></i> 3</span>
+                            </div>
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title">Livros cristãos para crianças</h3>
+                            <p class="topic-excerpt">Gostaria de recomendações de livros cristãos para crianças de 5 a 10 anos. Quais títulos vocês recomendam que sejam educativos e divertidos ao mesmo tempo?</p>
+                            <div class="topic-tags">
+                                <span class="topic-tag">Livros</span>
+                                <span class="topic-tag">Cristão</span>
+                                <span class="topic-tag">Educação</span>
+                            </div>
+                        </div>
+                        <div class="topic-footer">
+                            <button class="btn btn-outline btn-sm topic-action favorite-btn">
+                                <i class="far fa-star"></i> Favoritar
+                            </button>
+                            <button class="btn btn-primary btn-sm topic-action view-topic-btn">
+                                Ver Tópico
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tópico 5 -->
+                    <div class="topic-card" data-topic-id="5" data-filter="unanswered">
+                        <div class="topic-header">
+                            <div class="topic-author">
+                                <div class="avatar">
+                                    <span class="user-initial">J</span>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Juliana Costa</h4>
+                                    <span class="topic-date">20/05, 14:10</span>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span class="topic-views"><i class="fas fa-eye"></i> 9</span>
+                                <span class="topic-replies"><i class="fas fa-reply"></i> 0</span>
+                            </div>
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title">Como lidar com o vício em jogos eletrônicos?</h3>
+                            <p class="topic-excerpt">Meu filho de 12 anos está muito viciado em jogos eletrônicos. Já tentei limitar o tempo, mas ele fica irritado e ansioso. Como vocês lidam com essa situação?</p>
+                            <div class="topic-tags">
+                                <span class="topic-tag">Jogos</span>
+                                <span class="topic-tag">Vício Digital</span>
+                                <span class="topic-tag">Adolescentes</span>
+                            </div>
+                        </div>
+                        <div class="topic-footer">
+                            <button class="btn btn-outline btn-sm topic-action favorite-btn">
+                                <i class="far fa-star"></i> Favoritar
+                            </button>
+                            <button class="btn btn-primary btn-sm topic-action view-topic-btn">
+                                Ver Tópico
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Paginação -->
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Conteúdo do chat - Mensagens Diretas -->
+            <div class="chat-tab-content" id="direct-content">
+                <div class="direct-messages-container">
+                    <!-- Lista de contatos -->
+                    <div class="contacts-list">
+                        <div class="contacts-header">
+                            <h3>Contatos</h3>
+                            <div class="contacts-search">
+                                <input type="text" placeholder="Buscar..." class="contacts-search-input">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="contacts-items">
+                            <div class="contact-item active" data-contact-id="1">
+                                <div class="avatar">
+                                    <span class="user-initial">M</span>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Maria Oliveira</h4>
+                                    <p class="last-message">Obrigada pelas dicas!</p>
+                                </div>
+                                <div class="contact-meta">
+                                    <span class="message-time">10:45</span>
+                                    <span class="unread-badge">2</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" data-contact-id="2">
+                                <div class="avatar">
+                                    <span class="user-initial">P</span>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Paulo Santos</h4>
+                                    <p class="last-message">Vou experimentar essa atividade...</p>
+                                </div>
+                                <div class="contact-meta">
+                                    <span class="message-time">Ontem</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" data-contact-id="3">
+                                <div class="avatar">
+                                    <span class="user-initial">C</span>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Carla Mendes</h4>
+                                    <p class="last-message">Você tem alguma sugestão de livro?</p>
+                                </div>
+                                <div class="contact-meta">
+                                    <span class="message-time">19/05</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" data-contact-id="4">
+                                <div class="avatar">
+                                    <span class="user-initial">R</span>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Roberto Alves</h4>
+                                    <p class="last-message">Vamos marcar um encontro das famílias!</p>
+                                </div>
+                                <div class="contact-meta">
+                                    <span class="message-time">18/05</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item" data-contact-id="5">
+                                <div class="avatar">
+                                    <span class="user-initial">J</span>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Juliana Costa</h4>
+                                    <p class="last-message">Adorei as receitas que você compartilhou</p>
+                                </div>
+                                <div class="contact-meta">
+                                    <span class="message-time">15/05</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Área de mensagens -->
+                    <div class="messages-area">
+                        <div class="messages-header">
+                            <div class="messages-contact">
+                                <div class="avatar">
+                                    <span class="user-initial">M</span>
+                                </div>
+                                <div class="contact-info">
+                                    <h4>Maria Oliveira</h4>
+                                    <p class="contact-status online">Online</p>
+                                </div>
+                            </div>
+                            <div class="messages-actions">
+                                <button class="btn btn-icon">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i class="fas fa-video"></i>
+                                </button>
+                                <button class="btn btn-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="messages-content">
+                            <div class="message-date-divider">
+                                <span>Hoje</span>
+                            </div>
+                            
+                            <div class="message received">
+                                <div class="message-avatar">
+                                    <span class="user-initial">M</span>
+                                </div>
+                                <div class="message-bubble">
+                                    <p>Olá! Vi que você comentou no meu tópico sobre tempo de tela. Você tem alguma dica específica que funcionou com seus filhos?</p>
+                                    <span class="message-time">09:30</span>
+                                </div>
+                            </div>
+                            
+                            <div class="message sent">
+                                <div class="message-bubble">
+                                    <p>Oi Maria! Sim, tenho algumas estratégias que funcionaram bem aqui em casa. Primeiro, estabelecemos horários fixos para uso de telas, com timer visível para as crianças.</p>
+                                    <span class="message-time">09:45</span>
+                                </div>
+                            </div>
+                            
+                            <div class="message sent">
+                                <div class="message-bubble">
+                                    <p>Também criamos uma "caixa de atividades" com várias opções divertidas para quando eles ficam entediados e querem usar eletrônicos. Tem jogos de tabuleiro, materiais de arte, quebra-cabeças, etc.</p>
+                                    <span class="message-time">09:47</span>
+                                </div>
+                            </div>
+                            
+                            <div class="message received">
+                                <div class="message-avatar">
+                                    <span class="user-initial">M</span>
+                                </div>
+                                <div class="message-bubble">
+                                    <p>Adorei a ideia da caixa de atividades! Vou implementar isso aqui em casa. E vocês usam algum aplicativo para controlar o tempo de tela?</p>
+                                    <span class="message-time">10:15</span>
+                                </div>
+                            </div>
+                            
+                            <div class="message sent">
+                                <div class="message-bubble">
+                                    <p>Sim, usamos o Family Link para Android. Ele permite definir limites de tempo, aprovar aplicativos e monitorar o uso. Também temos a regra de "nada de telas" durante as refeições e uma hora antes de dormir.</p>
+                                    <span class="message-time">10:30</span>
+                                </div>
+                            </div>
+                            
+                            <div class="message received">
+                                <div class="message-avatar">
+                                    <span class="user-initial">M</span>
+                                </div>
+                                <div class="message-bubble">
+                                    <p>Obrigada pelas dicas! Vou experimentar essas estratégias. Tem sido um desafio, especialmente depois da pandemia quando eles se acostumaram com mais tempo de tela.</p>
+                                    <span class="message-time">10:45</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="messages-input">
+                            <button class="btn btn-icon">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <input type="text" placeholder="Digite sua mensagem..." class="message-input">
+                            <button class="btn btn-icon send-btn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conteúdo do chat - Favoritos -->
+            <div class="chat-tab-content" id="favorites-content">
+                <div class="favorites-empty" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Nenhum favorito ainda</h3>
+                    <p>Marque tópicos como favoritos para encontrá-los facilmente aqui.</p>
+                    <button class="btn btn-primary" id="browse-topics-btn">
+                        Explorar Tópicos
+                    </button>
+                </div>
+                
+                <div class="favorites-list">
+                    <!-- Tópico Favorito 1 -->
+                    <div class="topic-card" data-topic-id="2">
+                        <div class="topic-header">
+                            <div class="topic-author">
+                                <div class="avatar">
+                                    <span class="user-initial">P</span>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Paulo Santos</h4>
+                                    <span class="topic-date">Ontem, 15:45</span>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span class="topic-views"><i class="fas fa-eye"></i> 32</span>
+                                <span class="topic-replies"><i class="fas fa-reply"></i> 12</span>
+                            </div>
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title">Atividades ao ar livre para dias chuvosos</h3>
+                            <p class="topic-excerpt">Com a chegada do inverno, fica mais difícil manter as crianças longe das telas nos dias chuvosos. Quais atividades vocês fazem dentro de casa para mantê-los entretidos?</p>
+                            <div class="topic-tags">
+                                <span class="topic-tag">Atividades</span>
+                                <span class="topic-tag">Dias Chuvosos</span>
+                                <span class="topic-tag">Crianças</span>
+                            </div>
+                        </div>
+                        <div class="topic-footer">
+                            <button class="btn btn-outline btn-sm topic-action favorite-btn active">
+                                <i class="fas fa-star"></i> Favoritado
+                            </button>
+                            <button class="btn btn-primary btn-sm topic-action view-topic-btn">
+                                Ver Tópico
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tópico Favorito 2 -->
+                    <div class="topic-card" data-topic-id="4">
+                        <div class="topic-header">
+                            <div class="topic-author">
+                                <div class="avatar">
+                                    <span class="user-initial">R</span>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Roberto Alves</h4>
+                                    <span class="topic-date">Ontem, 18:20</span>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span class="topic-views"><i class="fas fa-eye"></i> 15</span>
+                                <span class="topic-replies"><i class="fas fa-reply"></i> 3</span>
+                            </div>
+                        </div>
+                        <div class="topic-content">
+                            <h3 class="topic-title">Livros cristãos para crianças</h3>
+                            <p class="topic-excerpt">Gostaria de recomendações de livros cristãos para crianças de 5 a 10 anos. Quais títulos vocês recomendam que sejam educativos e divertidos ao mesmo tempo?</p>
+                            <div class="topic-tags">
+                                <span class="topic-tag">Livros</span>
+                                <span class="topic-tag">Cristão</span>
+                                <span class="topic-tag">Educação</span>
+                            </div>
+                        </div>
+                        <div class="topic-footer">
+                            <button class="btn btn-outline btn-sm topic-action favorite-btn active">
+                                <i class="fas fa-star"></i> Favoritado
+                            </button>
+                            <button class="btn btn-primary btn-sm topic-action view-topic-btn">
+                                Ver Tópico
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Novo Tópico -->
+        <div class="modal" id="new-topic-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Criar Novo Tópico</h3>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="new-topic-form">
+                        <div class="form-group">
+                            <label for="topic-title">Título</label>
+                            <input type="text" id="topic-title" placeholder="Digite um título para seu tópico" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="topic-content">Conteúdo</label>
+                            <textarea id="topic-content" placeholder="Descreva seu tópico em detalhes..." rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="topic-tags">Tags (separadas por vírgula)</label>
+                            <input type="text" id="topic-tags" placeholder="Ex: Crianças, Atividades, Leitura">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="cancel-topic-btn">Cancelar</button>
+                    <button class="btn btn-primary" id="submit-topic-btn">Publicar Tópico</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal de Visualização de Tópico -->
+        <div class="modal" id="view-topic-modal">
+            <div class="modal-content topic-modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-topic-title">Dicas para reduzir o tempo de tela</h3>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="topic-detail">
+                        <div class="topic-detail-header">
+                            <div class="topic-author">
+                                <div class="avatar avatar-lg">
+                                    <span class="user-initial">M</span>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Maria Oliveira</h4>
+                                    <span class="topic-date">Hoje, 10:30</span>
+                                </div>
+                            </div>
+                            <div class="topic-actions">
+                                <button class="btn btn-outline btn-sm favorite-btn">
+                                    <i class="far fa-star"></i> Favoritar
+                                </button>
+                                <button class="btn btn-outline btn-sm share-btn">
+                                    <i class="fas fa-share-alt"></i> Compartilhar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-detail-content">
+                            <p>Olá a todos! Estou tendo dificuldades para reduzir o tempo que meu filho de 8 anos passa em frente às telas. Ele fica muito irritado quando peço para desligar o tablet ou a TV.</p>
+                            <p>Já tentei estabelecer horários, mas é difícil manter a consistência, especialmente nos fins de semana. Alguém tem dicas que funcionaram bem com seus filhos?</p>
+                            <p>Estou preocupada com os efeitos do excesso de telas no desenvolvimento dele e gostaria de encontrar um equilíbrio saudável.</p>
+                            
+                            <div class="topic-tags">
+                                <span class="topic-tag">Tempo de Tela</span>
+                                <span class="topic-tag">Crianças</span>
+                                <span class="topic-tag">Dicas</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-replies">
+                        <h4>Respostas (8)</h4>
+                        
+                        <!-- Resposta 1 -->
+                        <div class="reply-item">
+                            <div class="reply-author">
+                                <div class="avatar">
+                                    <span class="user-initial">A</span>
+                                </div>
+                                <div class="author-info">
+                                    <h5>Ana Silva</h5>
+                                    <span class="reply-date">Hoje, 11:15</span>
+                                </div>
+                            </div>
+                            <div class="reply-content">
+                                <p>Maria, passei por isso com meus filhos também! O que funcionou para nós foi criar uma "caixa de atividades" com várias opções divertidas para quando eles ficam entediados e querem usar eletrônicos.</p>
+                                <p>Colocamos jogos de tabuleiro, materiais de arte, quebra-cabeças, livros interessantes, etc. Também estabelecemos horários fixos para uso de telas, com timer visível para as crianças.</p>
+                            </div>
+                            <div class="reply-actions">
+                                <button class="btn btn-text like-btn">
+                                    <i class="far fa-thumbs-up"></i> Curtir (5)
+                                </button>
+                                <button class="btn btn-text reply-btn">
+                                    <i class="fas fa-reply"></i> Responder
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Resposta 2 -->
+                        <div class="reply-item">
+                            <div class="reply-author">
+                                <div class="avatar">
+                                    <span class="user-initial">P</span>
+                                </div>
+                                <div class="author-info">
+                                    <h5>Paulo Santos</h5>
+                                    <span class="reply-date">Hoje, 12:30</span>
+                                </div>
+                            </div>
+                            <div class="reply-content">
+                                <p>Uma estratégia que funcionou muito bem aqui foi o "sistema de tokens". Meus filhos ganham tokens por comportamentos positivos (fazer lição, ajudar em casa, ler livros) e podem trocar por tempo de tela.</p>
+                                <p>Isso os ensinou que o tempo de tela é um privilégio, não um direito, e os incentivou a fazer outras atividades. Também usamos aplicativos de controle parental como o Family Link para definir limites.</p>
+                            </div>
+                            <div class="reply-actions">
+                                <button class="btn btn-text like-btn">
+                                    <i class="far fa-thumbs-up"></i> Curtir (3)
+                                </button>
+                                <button class="btn btn-text reply-btn">
+                                    <i class="fas fa-reply"></i> Responder
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Resposta 3 -->
+                        <div class="reply-item">
+                            <div class="reply-author">
+                                <div class="avatar">
+                                    <span class="user-initial">C</span>
+                                </div>
+                                <div class="author-info">
+                                    <h5>Carla Mendes</h5>
+                                    <span class="reply-date">Hoje, 13:45</span>
+                                </div>
+                            </div>
+                            <div class="reply-content">
+                                <p>Além das excelentes dicas já mencionadas, algo que ajudou muito aqui foi dar o exemplo. Percebi que eu mesma passava muito tempo no celular, então estabelecemos "horários sem tela" para toda a família.</p>
+                                <p>Durante as refeições, ninguém usa eletrônicos. Também temos uma regra de "nada de telas" uma hora antes de dormir. Isso melhorou não só o uso de telas das crianças, mas também a qualidade do sono de todos!</p>
+                            </div>
+                            <div class="reply-actions">
+                                <button class="btn btn-text like-btn active">
+                                    <i class="fas fa-thumbs-up"></i> Curtido (7)
+                                </button>
+                                <button class="btn btn-text reply-btn">
+                                    <i class="fas fa-reply"></i> Responder
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Mais respostas (ocultas inicialmente) -->
+                        <div class="more-replies">
+                            <button class="btn btn-outline" id="load-more-replies">
+                                Ver mais 5 respostas
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulário de resposta -->
+                    <div class="reply-form">
+                        <h4>Sua Resposta</h4>
+                        <textarea placeholder="Compartilhe sua experiência ou dicas..." rows="3"></textarea>
+                        <div class="form-actions">
+                            <button class="btn btn-primary" id="submit-reply-btn">Enviar Resposta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de navegação inferior -->
+        <div class="bottom-nav">
+            <a href="dashboard.html" class="nav-link" data-target="dashboard">
+                <i class="fas fa-home nav-icon"></i>
+                <span>Início</span>
+            </a>
+            <a href="activities.html" class="nav-link" data-target="activities">
+                <i class="fas fa-tasks nav-icon"></i>
+                <span>Atividades</span>
+            </a>
+            <a href="food.html" class="nav-link" data-target="food">
+                <i class="fas fa-utensils nav-icon"></i>
+                <span>Comidas</span>
+            </a>
+            <a href="chat.html" class="nav-link active" data-target="chat">
+                <i class="fas fa-comments nav-icon"></i>
+                <span>Chat</span>
+            </a>
+            <a href="progress.html" class="nav-link" data-target="progress">
+                <i class="fas fa-chart-line nav-icon"></i>
+                <span>Progresso</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay para o menu lateral -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <script src="static/js/main.js"></script>
+    <script src="static/js/auth.js"></script>
+    <script>
+        // Verificar autenticação
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!isLoggedIn()) {
+                window.location.href = 'login.html';
+            } else {
+                // Carregar dados do usuário
+                const user = getLoggedInUser();
+                if (user) {
+                    document.querySelectorAll('.user-name').forEach(el => {
+                        el.textContent = user.name;
+                    });
+                    
+                    document.querySelectorAll('.user-initial').forEach(el => {
+                        el.textContent = user.name.charAt(0);
+                    });
+                    
+                    document.querySelectorAll('.user-role').forEach(el => {
+                        el.textContent = user.role === 'admin' ? 'Administrador' : 'Membro';
+                    });
+                }
+                
+                // Inicializar funcionalidades da página
+                initChatPage();
+            }
+            
+            // Configurar botão de logout
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                logoutUser();
+            });
+            
+            // Configurar toggle do menu lateral
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideMenu = document.getElementById('side-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            
+            menuToggle.addEventListener('click', function() {
+                sideMenu.classList.toggle('open');
+                menuOverlay.classList.toggle('active');
+            });
+            
+            menuOverlay.addEventListener('click', function() {
+                sideMenu.classList.remove('open');
+                menuOverlay.classList.remove('active');
+            });
+        });
+        
+        // Inicializar funcionalidades da página de chat
+        function initChatPage() {
+            // Configurar abas do chat
+            setupChatTabs();
+            
+            // Configurar filtros de tópicos
+            setupTopicFilters();
+            
+            // Configurar botões de tópicos
+            setupTopicButtons();
+            
+            // Configurar modais
+            setupModals();
+            
+            // Configurar mensagens diretas
+            setupDirectMessages();
+            
+            // Configurar favoritos
+            setupFavorites();
+            
+            // Adicionar animações e interatividade
+            addInteractivity();
+        }
+        
+        // Configurar abas do chat
+        function setupChatTabs() {
+            const chatTabs = document.querySelectorAll('.chat-tab');
+            const tabContents = document.querySelectorAll('.chat-tab-content');
+            
+            chatTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remover classe ativa de todas as abas
+                    chatTabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Adicionar classe ativa à aba clicada
+                    this.classList.add('active');
+                    
+                    // Mostrar conteúdo correspondente
+                    const tabName = this.getAttribute('data-tab');
+                    document.getElementById(`${tabName}-content`).classList.add('active');
+                });
+            });
+        }
+        
+        // Configurar filtros de tópicos
+        function setupTopicFilters() {
+            const filterPills = document.querySelectorAll('.filter-pill');
+            
+            filterPills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    // Remover classe ativa de todos os filtros
+                    filterPills.forEach(p => p.classList.remove('active'));
+                    
+                    // Adicionar classe ativa ao filtro clicado
+                    this.classList.add('active');
+                    
+                    // Filtrar tópicos
+                    const filter = this.getAttribute('data-filter');
+                    filterTopics(filter);
+                });
+            });
+        }
+        
+        // Filtrar tópicos
+        function filterTopics(filter) {
+            const topicCards = document.querySelectorAll('.topics-list .topic-card');
+            
+            topicCards.forEach(card => {
+                if (filter === 'all') {
+                    card.style.display = 'flex';
+                } else {
+                    const cardFilters = card.getAttribute('data-filter');
+                    if (cardFilters && cardFilters.includes(filter)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+        
+        // Configurar botões de tópicos
+        function setupTopicButtons() {
+            // Botão de novo tópico
+            document.getElementById('new-topic-btn').addEventListener('click', function() {
+                document.getElementById('new-topic-modal').style.display = 'block';
+            });
+            
+            // Botões de visualizar tópico
+            document.querySelectorAll('.view-topic-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const topicId = this.closest('.topic-card').getAttribute('data-topic-id');
+                    openTopicModal(topicId);
+                });
+            });
+            
+            // Botões de favoritar
+            document.querySelectorAll('.favorite-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    toggleFavorite(this);
+                });
+            });
+            
+            // Botão de explorar tópicos
+            document.getElementById('browse-topics-btn')?.addEventListener('click', function() {
+                // Mudar para a aba de tópicos
+                document.querySelector('.chat-tab[data-tab="topics"]').click();
+            });
+        }
+        
+        // Configurar modais
+        function setupModals() {
+            // Modal de novo tópico
+            const newTopicModal = document.getElementById('new-topic-modal');
+            const viewTopicModal = document.getElementById('view-topic-modal');
+            
+            // Botões de fechar
+            document.querySelectorAll('.modal-close').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.closest('.modal').style.display = 'none';
+                });
+            });
+            
+            // Fechar ao clicar fora
+            window.addEventListener('click', function(e) {
+                if (e.target === newTopicModal) {
+                    newTopicModal.style.display = 'none';
+                }
+                if (e.target === viewTopicModal) {
+                    viewTopicModal.style.display = 'none';
+                }
+            });
+            
+            // Botão de cancelar novo tópico
+            document.getElementById('cancel-topic-btn').addEventListener('click', function() {
+                newTopicModal.style.display = 'none';
+            });
+            
+            // Botão de enviar novo tópico
+            document.getElementById('submit-topic-btn').addEventListener('click', function() {
+                submitNewTopic();
+            });
+            
+            // Botão de carregar mais respostas
+            document.getElementById('load-more-replies').addEventListener('click', function() {
+                loadMoreReplies();
+            });
+            
+            // Botão de enviar resposta
+            document.getElementById('submit-reply-btn').addEventListener('click', function() {
+                submitReply();
+            });
+        }
+        
+        // Configurar mensagens diretas
+        function setupDirectMessages() {
+            // Selecionar contato
+            document.querySelectorAll('.contact-item').forEach(contact => {
+                contact.addEventListener('click', function() {
+                    // Remover classe ativa de todos os contatos
+                    document.querySelectorAll('.contact-item').forEach(c => c.classList.remove('active'));
+                    
+                    // Adicionar classe ativa ao contato clicado
+                    this.classList.add('active');
+                    
+                    // Carregar mensagens do contato
+                    const contactId = this.getAttribute('data-contact-id');
+                    loadContactMessages(contactId);
+                    
+                    // Remover badge de não lido
+                    const unreadBadge = this.querySelector('.unread-badge');
+                    if (unreadBadge) {
+                        unreadBadge.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Enviar mensagem
+            document.querySelector('.send-btn').addEventListener('click', function() {
+                sendMessage();
+            });
+            
+            // Enviar mensagem ao pressionar Enter
+            document.querySelector('.message-input').addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        }
+        
+        // Configurar favoritos
+        function setupFavorites() {
+            // Verificar se há favoritos
+            const favoritesList = document.querySelector('.favorites-list');
+            const favoritesEmpty = document.querySelector('.favorites-empty');
+            
+            if (favoritesList.children.length === 0) {
+                favoritesList.style.display = 'none';
+                favoritesEmpty.style.display = 'block';
+            } else {
+                favoritesList.style.display = 'block';
+                favoritesEmpty.style.display = 'none';
+            }
+        }
+        
+        // Adicionar interatividade
+        function addInteractivity() {
+            // Efeito de hover nos cards de tópicos
+            document.querySelectorAll('.topic-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.classList.add('hover');
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.classList.remove('hover');
+                });
+            });
+            
+            // Efeito de digitação na caixa de mensagem
+            const messageInput = document.querySelector('.message-input');
+            messageInput.addEventListener('focus', function() {
+                this.closest('.messages-input').classList.add('active');
+            });
+            
+            messageInput.addEventListener('blur', function() {
+                if (this.value === '') {
+                    this.closest('.messages-input').classList.remove('active');
+                }
+            });
+            
+            // Animação de curtir
+            document.querySelectorAll('.like-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    
+                    if (this.classList.contains('active')) {
+                        this.innerHTML = '<i class="fas fa-thumbs-up"></i> Curtido (8)';
+                    } else {
+                        this.innerHTML = '<i class="far fa-thumbs-up"></i> Curtir (7)';
+                    }
+                    
+                    // Adicionar efeito de pulso
+                    this.classList.add('pulse');
+                    setTimeout(() => {
+                        this.classList.remove('pulse');
+                    }, 300);
+                });
+            });
+            
+            // Animação de responder
+            document.querySelectorAll('.reply-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Rolar para o formulário de resposta
+                    const replyForm = document.querySelector('.reply-form textarea');
+                    replyForm.focus();
+                    replyForm.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Adicionar menção ao autor
+                    const authorName = this.closest('.reply-item').querySelector('.author-info h5').textContent;
+                    replyForm.value = `@${authorName} `;
+                });
+            });
+        }
+        
+        // Abrir modal de tópico
+        function openTopicModal(topicId) {
+            // Em uma implementação real, você buscaria os dados do tópico do backend
+            // Aqui estamos apenas simulando com dados estáticos
+            
+            // Atualizar título do modal
+            const topicCard = document.querySelector(`.topic-card[data-topic-id="${topicId}"]`);
+            if (topicCard) {
+                const topicTitle = topicCard.querySelector('.topic-title').textContent;
+                document.getElementById('modal-topic-title').textContent = topicTitle;
+            }
+            
+            // Verificar se é favorito
+            const isFavorite = topicCard.querySelector('.favorite-btn.active') !== null;
+            const modalFavoriteBtn = document.querySelector('#view-topic-modal .favorite-btn');
+            
+            if (isFavorite) {
+                modalFavoriteBtn.classList.add('active');
+                modalFavoriteBtn.innerHTML = '<i class="fas fa-star"></i> Favoritado';
+            } else {
+                modalFavoriteBtn.classList.remove('active');
+                modalFavoriteBtn.innerHTML = '<i class="far fa-star"></i> Favoritar';
+            }
+            
+            // Exibir modal
+            document.getElementById('view-topic-modal').style.display = 'block';
+        }
+        
+        // Alternar favorito
+        function toggleFavorite(button) {
+            button.classList.toggle('active');
+            
+            if (button.classList.contains('active')) {
+                button.innerHTML = '<i class="fas fa-star"></i> Favoritado';
+                showNotification('Tópico adicionado aos favoritos!', 'success');
+            } else {
+                button.innerHTML = '<i class="far fa-star"></i> Favoritar';
+                showNotification('Tópico removido dos favoritos.', 'info');
+            }
+            
+            // Atualizar lista de favoritos
+            updateFavorites();
+        }
+        
+        // Atualizar lista de favoritos
+        function updateFavorites() {
+            // Em uma implementação real, você salvaria os favoritos no backend
+            // Aqui estamos apenas simulando
+            
+            // Verificar se há favoritos
+            const favoriteButtons = document.querySelectorAll('.topics-list .favorite-btn.active');
+            const favoritesList = document.querySelector('.favorites-list');
+            const favoritesEmpty = document.querySelector('.favorites-empty');
+            
+            if (favoriteButtons.length === 0) {
+                favoritesList.style.display = 'none';
+                favoritesEmpty.style.display = 'block';
+            } else {
+                favoritesList.style.display = 'block';
+                favoritesEmpty.style.display = 'none';
+            }
+        }
+        
+        // Enviar novo tópico
+        function submitNewTopic() {
+            const title = document.getElementById('topic-title').value;
+            const content = document.getElementById('topic-content').value;
+            const tags = document.getElementById('topic-tags').value;
+            
+            if (!title || !content) {
+                showNotification('Por favor, preencha todos os campos obrigatórios.', 'error');
+                return;
+            }
+            
+            // Em uma implementação real, você enviaria os dados para o backend
+            // Aqui estamos apenas simulando
+            
+            // Fechar modal
+            document.getElementById('new-topic-modal').style.display = 'none';
+            
+            // Limpar formulário
+            document.getElementById('new-topic-form').reset();
+            
+            // Mostrar notificação
+            showNotification('Tópico publicado com sucesso!', 'success');
+            
+            // Adicionar novo tópico à lista (simulação)
+            addNewTopicToList(title, content, tags);
+        }
+        
+        // Adicionar novo tópico à lista
+        function addNewTopicToList(title, content, tags) {
+            const topicsList = document.querySelector('.topics-list');
+            const user = getLoggedInUser();
+            
+            // Criar tags HTML
+            let tagsHtml = '';
+            if (tags) {
+                const tagArray = tags.split(',').map(tag => tag.trim());
+                tagArray.forEach(tag => {
+                    tagsHtml += `<span class="topic-tag">${tag}</span>`;
+                });
+            }
+            
+            // Criar HTML do novo tópico
+            const newTopicHtml = `
+                <div class="topic-card" data-topic-id="new" data-filter="recent">
+                    <div class="topic-header">
+                        <div class="topic-author">
+                            <div class="avatar">
+                                <span class="user-initial">${user.name.charAt(0)}</span>
+                            </div>
+                            <div class="author-info">
+                                <h4>${user.name}</h4>
+                                <span class="topic-date">Agora mesmo</span>
+                            </div>
+                        </div>
+                        <div class="topic-stats">
+                            <span class="topic-views"><i class="fas fa-eye"></i> 0</span>
+                            <span class="topic-replies"><i class="fas fa-reply"></i> 0</span>
+                        </div>
+                    </div>
+                    <div class="topic-content">
+                        <h3 class="topic-title">${title}</h3>
+                        <p class="topic-excerpt">${content.substring(0, 150)}${content.length > 150 ? '...' : ''}</p>
+                        <div class="topic-tags">
+                            ${tagsHtml}
+                        </div>
+                    </div>
+                    <div class="topic-footer">
+                        <button class="btn btn-outline btn-sm topic-action favorite-btn">
+                            <i class="far fa-star"></i> Favoritar
+                        </button>
+                        <button class="btn btn-primary btn-sm topic-action view-topic-btn">
+                            Ver Tópico
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Adicionar ao início da lista
+            topicsList.insertAdjacentHTML('afterbegin', newTopicHtml);
+            
+            // Configurar botões do novo tópico
+            const newTopic = topicsList.querySelector('.topic-card[data-topic-id="new"]');
+            
+            newTopic.querySelector('.view-topic-btn').addEventListener('click', function() {
+                openTopicModal('new');
+            });
+            
+            newTopic.querySelector('.favorite-btn').addEventListener('click', function() {
+                toggleFavorite(this);
+            });
+            
+            // Adicionar interatividade
+            newTopic.addEventListener('mouseenter', function() {
+                this.classList.add('hover');
+            });
+            
+            newTopic.addEventListener('mouseleave', function() {
+                this.classList.remove('hover');
+            });
+            
+            // Aplicar filtro atual
+            const activeFilter = document.querySelector('.filter-pill.active').getAttribute('data-filter');
+            filterTopics(activeFilter);
+        }
+        
+        // Carregar mais respostas
+        function loadMoreReplies() {
+            // Em uma implementação real, você buscaria mais respostas do backend
+            // Aqui estamos apenas simulando com dados estáticos
+            
+            const repliesContainer = document.querySelector('.topic-replies');
+            const moreRepliesBtn = document.getElementById('load-more-replies');
+            
+            // Novas respostas
+            const newRepliesHtml = `
+                <!-- Resposta 4 -->
+                <div class="reply-item">
+                    <div class="reply-author">
+                        <div class="avatar">
+                            <span class="user-initial">R</span>
+                        </div>
+                        <div class="author-info">
+                            <h5>Roberto Alves</h5>
+                            <span class="reply-date">Hoje, 14:20</span>
+                        </div>
+                    </div>
+                    <div class="reply-content">
+                        <p>Uma coisa que ajudou muito aqui foi envolver as crianças na decisão. Conversamos sobre os efeitos das telas e juntos estabelecemos regras que todos concordaram. Isso deu a eles um senso de controle e responsabilidade.</p>
+                        <p>Também criamos uma "caixa de ideias" onde todos escrevem atividades divertidas para fazer sem telas. Quando alguém diz "estou entediado", pegamos uma ideia da caixa.</p>
+                    </div>
+                    <div class="reply-actions">
+                        <button class="btn btn-text like-btn">
+                            <i class="far fa-thumbs-up"></i> Curtir (2)
+                        </button>
+                        <button class="btn btn-text reply-btn">
+                            <i class="fas fa-reply"></i> Responder
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Resposta 5 -->
+                <div class="reply-item">
+                    <div class="reply-author">
+                        <div class="avatar">
+                            <span class="user-initial">J</span>
+                        </div>
+                        <div class="author-info">
+                            <h5>Juliana Costa</h5>
+                            <span class="reply-date">Hoje, 15:05</span>
+                        </div>
+                    </div>
+                    <div class="reply-content">
+                        <p>Além de todas as ótimas dicas já mencionadas, algo que funcionou muito bem para nós foi criar "zonas livres de tela" em casa. A sala de estar e os quartos são áreas sem eletrônicos, apenas a sala de TV tem telas.</p>
+                        <p>Isso ajudou a criar limites físicos claros e incentivou outras atividades nesses espaços. Também temos uma estante de jogos e livros bem visível na sala, o que facilita escolher alternativas às telas.</p>
+                    </div>
+                    <div class="reply-actions">
+                        <button class="btn btn-text like-btn">
+                            <i class="far fa-thumbs-up"></i> Curtir (4)
+                        </button>
+                        <button class="btn btn-text reply-btn">
+                            <i class="fas fa-reply"></i> Responder
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Inserir antes do botão "Ver mais"
+            moreRepliesBtn.parentNode.insertAdjacentHTML('beforebegin', newRepliesHtml);
+            
+            // Configurar botões das novas respostas
+            document.querySelectorAll('.reply-item:nth-last-child(2) .like-btn, .reply-item:nth-last-child(3) .like-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    
+                    if (this.classList.contains('active')) {
+                        const currentLikes = parseInt(this.textContent.match(/\d+/)[0]);
+                        this.innerHTML = `<i class="fas fa-thumbs-up"></i> Curtido (${currentLikes + 1})`;
+                    } else {
+                        const currentLikes = parseInt(this.textContent.match(/\d+/)[0]);
+                        this.innerHTML = `<i class="far fa-thumbs-up"></i> Curtir (${currentLikes - 1})`;
+                    }
+                    
+                    this.classList.add('pulse');
+                    setTimeout(() => {
+                        this.classList.remove('pulse');
+                    }, 300);
+                });
+            });
+            
+            document.querySelectorAll('.reply-item:nth-last-child(2) .reply-btn, .reply-item:nth-last-child(3) .reply-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const replyForm = document.querySelector('.reply-form textarea');
+                    replyForm.focus();
+                    replyForm.scrollIntoView({ behavior: 'smooth' });
+                    
+                    const authorName = this.closest('.reply-item').querySelector('.author-info h5').textContent;
+                    replyForm.value = `@${authorName} `;
+                });
+            });
+            
+            // Atualizar botão
+            moreRepliesBtn.textContent = 'Ver mais 3 respostas';
+            
+            // Desabilitar botão após segundo clique
+            moreRepliesBtn.addEventListener('click', function() {
+                this.disabled = true;
+                this.textContent = 'Não há mais respostas';
+            }, { once: true });
+        }
+        
+        // Enviar resposta
+        function submitReply() {
+            const replyText = document.querySelector('.reply-form textarea').value;
+            
+            if (!replyText) {
+                showNotification('Por favor, digite sua resposta.', 'error');
+                return;
+            }
+            
+            // Em uma implementação real, você enviaria a resposta para o backend
+            // Aqui estamos apenas simulando
+            
+            // Limpar formulário
+            document.querySelector('.reply-form textarea').value = '';
+            
+            // Mostrar notificação
+            showNotification('Resposta enviada com sucesso!', 'success');
+            
+            // Adicionar nova resposta à lista (simulação)
+            addNewReplyToList(replyText);
+        }
+        
+        // Adicionar nova resposta à lista
+        function addNewReplyToList(replyText) {
+            const repliesContainer = document.querySelector('.topic-replies');
+            const moreRepliesBtn = document.querySelector('.more-replies');
+            const user = getLoggedInUser();
+            
+            // Criar HTML da nova resposta
+            const newReplyHtml = `
+                <div class="reply-item new-reply">
+                    <div class="reply-author">
+                        <div class="avatar">
+                            <span class="user-initial">${user.name.charAt(0)}</span>
+                        </div>
+                        <div class="author-info">
+                            <h5>${user.name}</h5>
+                            <span class="reply-date">Agora mesmo</span>
+                        </div>
+                    </div>
+                    <div class="reply-content">
+                        <p>${replyText}</p>
+                    </div>
+                    <div class="reply-actions">
+                        <button class="btn btn-text like-btn">
+                            <i class="far fa-thumbs-up"></i> Curtir (0)
+                        </button>
+                        <button class="btn btn-text reply-btn">
+                            <i class="fas fa-reply"></i> Responder
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Inserir antes do botão "Ver mais" ou no final se não houver botão
+            if (moreRepliesBtn) {
+                moreRepliesBtn.insertAdjacentHTML('beforebegin', newReplyHtml);
+            } else {
+                repliesContainer.insertAdjacentHTML('beforeend', newReplyHtml);
+            }
+            
+            // Configurar botões da nova resposta
+            const newReply = document.querySelector('.reply-item.new-reply');
+            
+            newReply.querySelector('.like-btn').addEventListener('click', function() {
+                this.classList.toggle('active');
+                
+                if (this.classList.contains('active')) {
+                    this.innerHTML = '<i class="fas fa-thumbs-up"></i> Curtido (1)';
+                } else {
+                    this.innerHTML = '<i class="far fa-thumbs-up"></i> Curtir (0)';
+                }
+                
+                this.classList.add('pulse');
+                setTimeout(() => {
+                    this.classList.remove('pulse');
+                }, 300);
+            });
+            
+            newReply.querySelector('.reply-btn').addEventListener('click', function() {
+                const replyForm = document.querySelector('.reply-form textarea');
+                replyForm.focus();
+                replyForm.scrollIntoView({ behavior: 'smooth' });
+                
+                const authorName = this.closest('.reply-item').querySelector('.author-info h5').textContent;
+                replyForm.value = `@${authorName} `;
+            });
+            
+            // Remover classe new-reply
+            setTimeout(() => {
+                newReply.classList.remove('new-reply');
+            }, 2000);
+            
+            // Atualizar contador de respostas
+            const repliesCount = document.querySelector('.topic-replies h4');
+            const currentCount = parseInt(repliesCount.textContent.match(/\d+/)[0]);
+            repliesCount.textContent = `Respostas (${currentCount + 1})`;
+        }
+        
+        // Carregar mensagens do contato
+        function loadContactMessages(contactId) {
+            // Em uma implementação real, você buscaria as mensagens do backend
+            // Aqui estamos apenas simulando com dados estáticos
+            
+            // Atualizar cabeçalho de mensagens
+            const contactItem = document.querySelector(`.contact-item[data-contact-id="${contactId}"]`);
+            const contactName = contactItem.querySelector('.contact-info h4').textContent;
+            
+            document.querySelector('.messages-contact h4').textContent = contactName;
+            document.querySelector('.messages-contact .user-initial').textContent = contactName.charAt(0);
+            
+            // Simular carregamento de mensagens
+            if (contactId !== '1') {
+                // Mostrar mensagens diferentes para outros contatos
+                document.querySelector('.messages-content').innerHTML = `
+                    <div class="message-date-divider">
+                        <span>Hoje</span>
+                    </div>
+                    
+                    <div class="message received">
+                        <div class="message-avatar">
+                            <span class="user-initial">${contactName.charAt(0)}</span>
+                        </div>
+                        <div class="message-bubble">
+                            <p>Olá! Como estão as coisas com você e sua família?</p>
+                            <span class="message-time">09:15</span>
+                        </div>
+                    </div>
+                    
+                    <div class="message sent">
+                        <div class="message-bubble">
+                            <p>Oi ${contactName}! Estamos todos bem, obrigado por perguntar. E vocês?</p>
+                            <span class="message-time">09:20</span>
+                        </div>
+                    </div>
+                    
+                    <div class="message received">
+                        <div class="message-avatar">
+                            <span class="user-initial">${contactName.charAt(0)}</span>
+                        </div>
+                        <div class="message-bubble">
+                            <p>Também estamos bem! Estou tentando implementar algumas das dicas do Guia Equilíbrio Digital e tem funcionado muito bem.</p>
+                            <span class="message-time">09:25</span>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+        
+        // Enviar mensagem
+        function sendMessage() {
+            const messageInput = document.querySelector('.message-input');
+            const messageText = messageInput.value;
+            
+            if (!messageText) {
+                return;
+            }
+            
+            // Limpar input
+            messageInput.value = '';
+            
+            // Adicionar mensagem à conversa
+            const messagesContent = document.querySelector('.messages-content');
+            const now = new Date();
+            const timeString = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            
+            const messageHtml = `
+                <div class="message sent">
+                    <div class="message-bubble">
+                        <p>${messageText}</p>
+                        <span class="message-time">${timeString}</span>
+                    </div>
+                </div>
+            `;
+            
+            messagesContent.insertAdjacentHTML('beforeend', messageHtml);
+            
+            // Rolar para o final
+            messagesContent.scrollTop = messagesContent.scrollHeight;
+            
+            // Simular resposta após alguns segundos
+            setTimeout(() => {
+                const contactName = document.querySelector('.messages-contact h4').textContent;
+                const contactInitial = contactName.charAt(0);
+                
+                const responseHtml = `
+                    <div class="message received">
+                        <div class="message-avatar">
+                            <span class="user-initial">${contactInitial}</span>
+                        </div>
+                        <div class="message-bubble">
+                            <p>Obrigado pela mensagem! Vou responder em breve.</p>
+                            <span class="message-time">${timeString}</span>
+                        </div>
+                    </div>
+                `;
+                
+                messagesContent.insertAdjacentHTML('beforeend', responseHtml);
+                messagesContent.scrollTop = messagesContent.scrollHeight;
+            }, 2000);
+        }
+        
+        // Função para mostrar notificações
+        function showNotification(message, type) {
+            // Criar elemento de notificação
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            // Adicionar ao DOM
+            document.body.appendChild(notification);
+            
+            // Remover após alguns segundos
+            setTimeout(() => {
+                notification.classList.add('fade-out');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

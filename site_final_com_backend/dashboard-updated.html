@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Equilíbrio Digital | Dashboard</title>
+    <link rel="stylesheet" href="css/styles-updated.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Guia Equilíbrio Digital Logo">
+                <h1>Guia Equilíbrio Digital</h1>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav class="nav-links">
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="activities.html">Atividades</a>
+                <a href="food.html">Alimentação</a>
+                <a href="chat.html">Chat</a>
+                <a href="#" id="logout-btn" class="btn">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="dashboard-welcome">
+        <div class="container">
+            <h2>Bem-vindo(a), <span class="user-name">Usuário</span>!</h2>
+            <p>Este é seu painel personalizado para acompanhar seu progresso e acessar todas as funcionalidades do Guia Equilíbrio Digital.</p>
+        </div>
+    </section>
+
+    <section class="dashboard-content">
+        <div class="container">
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>Seu Progresso</h3>
+                    <div class="progress-summary">
+                        <div class="progress-item">
+                            <span class="progress-label">Atividades Concluídas</span>
+                            <div class="activity-progress">
+                                <div class="progress-bar" style="width: 40%"></div>
+                            </div>
+                            <span class="progress-text">12 de 30</span>
+                        </div>
+                        <div class="progress-item">
+                            <span class="progress-label">Dias Consecutivos</span>
+                            <div class="activity-progress">
+                                <div class="progress-bar" style="width: 70%"></div>
+                            </div>
+                            <span class="progress-text">7 dias</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Desafio do Dia</h3>
+                    <div class="daily-challenge">
+                        <div class="challenge-icon">
+                            <img src="images/activities-icon.png" alt="Ícone de atividade" width="50">
+                        </div>
+                        <div class="challenge-content">
+                            <h4>Desenho em família</h4>
+                            <p>Dedique 30 minutos para desenhar junto com seu filho hoje.</p>
+                            <a href="activities.html" class="btn">Iniciar Desafio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Atividades Recentes</h3>
+                    <div class="recent-activities">
+                        <div class="activity-item">
+                            <div class="activity-status completed">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Brincadeira ao ar livre</h4>
+                                <p>Concluída em 21/05/2025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-status completed">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Leitura em família</h4>
+                                <p>Concluída em 20/05/2025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-status pending">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Jogo de tabuleiro</h4>
+                                <p>Iniciada em 19/05/2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="activities.html" class="btn">Ver Todas as Atividades</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-title">Recomendado para Você</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/food-icon.png" alt="Comidas Saudáveis">
+                    </div>
+                    <h3>Receitas Saudáveis</h3>
+                    <p>Descubra receitas deliciosas e nutritivas para toda a família.</p>
+                    <a href="food.html" class="btn">Explorar</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/coloring-icon.png" alt="Colorir">
+                    </div>
+                    <h3>Imagens para Colorir</h3>
+                    <p>Atividades criativas com temática cristã para seus filhos.</p>
+                    <a href="coloring.html" class="btn">Explorar</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="images/chat-icon.png" alt="Chat">
+                    </div>
+                    <h3>Chat entre Pais</h3>
+                    <p>Compartilhe experiências e dicas com outros pais da comunidade.</p>
+                    <a href="chat.html" class="btn">Explorar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Guia Equilíbrio Digital</h3>
+                    <p>Ajudando famílias a encontrar o equilíbrio perfeito entre o mundo digital e o real.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="activities.html">Atividades</a></li>
+                        <li><a href="food.html">Alimentação</a></li>
+                        <li><a href="chat.html">Chat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Suporte</h3>
+                    <p>Email: suporte@guiaequilibriodigital.com.br</p>
+                    <p>Telefone: (11) 9999-9999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Guia Equilíbrio Digital. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main-updated.js"></script>
+</body>
+</html>

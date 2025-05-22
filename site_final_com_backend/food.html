@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Equilíbrio Digital - Comidas Saudáveis</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container auth-required">
+        <div class="header">
+            <h1>Guia Equilíbrio Digital</h1>
+            <div class="menu-icon" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- Menu lateral (oculto por padrão) -->
+        <div class="side-menu" id="side-menu">
+            <div class="user-profile">
+                <div class="avatar avatar-lg">
+                    <span class="user-initial">A</span>
+                </div>
+                <div class="user-info">
+                    <h3 class="user-name">Ana Silva</h3>
+                    <p class="user-role">Membro</p>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html" class="side-nav-item">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="activities.html" class="side-nav-item">
+                    <i class="fas fa-tasks"></i> Atividades
+                </a>
+                <a href="food.html" class="side-nav-item active">
+                    <i class="fas fa-utensils"></i> Comidas Saudáveis
+                </a>
+                <a href="coloring.html" class="side-nav-item">
+                    <i class="fas fa-paint-brush"></i> Colorir
+                </a>
+                <a href="chat.html" class="side-nav-item">
+                    <i class="fas fa-comments"></i> Chat
+                </a>
+                <a href="profile.html" class="side-nav-item">
+                    <i class="fas fa-user"></i> Perfil
+                </a>
+                <a href="#" class="side-nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </a>
+            </nav>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="main-content">
+            <h2 class="section-title">Comidas Saudáveis</h2>
+            
+            <!-- Navegação por refeições -->
+            <div class="meal-tabs">
+                <div class="meal-tab active" data-meal="all">
+                    <i class="fas fa-utensils"></i>
+                    <span>Todas</span>
+                </div>
+                <div class="meal-tab" data-meal="breakfast">
+                    <i class="fas fa-coffee"></i>
+                    <span>Café da Manhã</span>
+                </div>
+                <div class="meal-tab" data-meal="lunch">
+                    <i class="fas fa-drumstick-bite"></i>
+                    <span>Almoço</span>
+                </div>
+                <div class="meal-tab" data-meal="snack">
+                    <i class="fas fa-apple-alt"></i>
+                    <span>Lanche</span>
+                </div>
+                <div class="meal-tab" data-meal="dinner">
+                    <i class="fas fa-bread-slice"></i>
+                    <span>Jantar</span>
+                </div>
+            </div>
+            
+            <!-- Filtros e pesquisa -->
+            <div class="filters-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar receitas..." class="search-input">
+                    <button class="btn btn-primary btn-sm search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                
+                <div class="filter-options">
+                    <select class="filter-select" id="diet-filter">
+                        <option value="">Todas as dietas</option>
+                        <option value="gluten-free">Sem Glúten</option>
+                        <option value="dairy-free">Sem Lactose</option>
+                        <option value="vegetarian">Vegetariano</option>
+                        <option value="vegan">Vegano</option>
+                    </select>
+                    
+                    <select class="filter-select" id="time-filter">
+                        <option value="">Qualquer tempo</option>
+                        <option value="quick">Rápido (até 15 min)</option>
+                        <option value="medium">Médio (15-30 min)</option>
+                        <option value="long">Demorado (mais de 30 min)</option>
+                    </select>
+                    
+                    <select class="filter-select" id="difficulty-filter">
+                        <option value="">Qualquer dificuldade</option>
+                        <option value="easy">Fácil</option>
+                        <option value="medium">Média</option>
+                        <option value="hard">Difícil</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Lista de receitas -->
+            <div class="recipes-grid">
+                <!-- Receita 1 -->
+                <div class="recipe-card" data-meal="breakfast" data-diet="gluten-free dairy-free" data-time="quick" data-difficulty="easy">
+                    <div class="recipe-image">
+                        <img src="static/images/food-icon.png" alt="Smoothie de Frutas" class="recipe-img">
+                        <span class="recipe-badge breakfast">Café da Manhã</span>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Smoothie de Frutas</h3>
+                        <div class="recipe-meta">
+                            <span class="recipe-time"><i class="fas fa-clock"></i> 10 min</span>
+                            <span class="recipe-difficulty easy"><i class="fas fa-star"></i> Fácil</span>
+                        </div>
+                        <p class="recipe-description">Um delicioso smoothie de frutas com banana, morango e espinafre, rico em vitaminas e minerais.</p>
+                        <div class="recipe-tags">
+                            <span class="recipe-tag">Sem Glúten</span>
+                            <span class="recipe-tag">Sem Lactose</span>
+                        </div>
+                        <div class="recipe-actions">
+                            <button class="btn btn-primary btn-sm view-recipe" data-recipe-id="1">Ver Receita</button>
+                            <button class="btn btn-outline btn-sm save-recipe" data-recipe-id="1">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Receita 2 -->
+                <div class="recipe-card" data-meal="lunch" data-diet="vegetarian" data-time="medium" data-difficulty="medium">
+                    <div class="recipe-image">
+                        <img src="static/images/food-icon.png" alt="Salada Colorida" class="recipe-img">
+                        <span class="recipe-badge lunch">Almoço</span>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Salada Colorida</h3>
+                        <div class="recipe-meta">
+                            <span class="recipe-time"><i class="fas fa-clock"></i> 20 min</span>
+                            <span class="recipe-difficulty medium"><i class="fas fa-star"></i><i class="fas fa-star"></i> Média</span>
+                        </div>
+                        <p class="recipe-description">Uma salada nutritiva com mix de folhas, legumes, grãos e molho especial, perfeita para um almoço leve.</p>
+                        <div class="recipe-tags">
+                            <span class="recipe-tag">Vegetariano</span>
+                        </div>
+                        <div class="recipe-actions">
+                            <button class="btn btn-primary btn-sm view-recipe" data-recipe-id="2">Ver Receita</button>
+                            <button class="btn btn-outline btn-sm save-recipe" data-recipe-id="2">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Receita 3 -->
+                <div class="recipe-card" data-meal="snack" data-diet="gluten-free" data-time="quick" data-difficulty="easy">
+                    <div class="recipe-image">
+                        <img src="static/images/food-icon.png" alt="Palitos de Legumes" class="recipe-img">
+                        <span class="recipe-badge snack">Lanche</span>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Palitos de Legumes</h3>
+                        <div class="recipe-meta">
+                            <span class="recipe-time"><i class="fas fa-clock"></i> 15 min</span>
+                            <span class="recipe-difficulty easy"><i class="fas fa-star"></i> Fácil</span>
+                        </div>
+                        <p class="recipe-description">Palitos de cenoura, pepino e aipo com molho de iogurte, uma opção saudável para o lanche das crianças.</p>
+                        <div class="recipe-tags">
+                            <span class="recipe-tag">Sem Glúten</span>
+                        </div>
+                        <div class="recipe-actions">
+                            <button class="btn btn-primary btn-sm view-recipe" data-recipe-id="3">Ver Receita</button>
+                            <button class="btn btn-outline btn-sm save-recipe" data-recipe-id="3">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Receita 4 -->
+                <div class="recipe-card" data-meal="dinner" data-diet="gluten-free" data-time="long" data-difficulty="medium">
+                    <div class="recipe-image">
+                        <img src="static/images/food-icon.png" alt="Sopa de Legumes" class="recipe-img">
+                        <span class="recipe-badge dinner">Jantar</span>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Sopa de Legumes</h3>
+                        <div class="recipe-meta">
+                            <span class="recipe-time"><i class="fas fa-clock"></i> 40 min</span>
+                            <span class="recipe-difficulty medium"><i class="fas fa-star"></i><i class="fas fa-star"></i> Média</span>
+                        </div>
+                        <p class="recipe-description">Uma sopa nutritiva com diversos legumes e ervas, ideal para um jantar leve e reconfortante.</p>
+                        <div class="recipe-tags">
+                            <span class="recipe-tag">Sem Glúten</span>
+                        </div>
+                        <div class="recipe-actions">
+                            <button class="btn btn-primary btn-sm view-recipe" data-recipe-id="4">Ver Receita</button>
+                            <button class="btn btn-outline btn-sm save-recipe" data-recipe-id="4">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Receita 5 -->
+                <div class="recipe-card" data-meal="breakfast" data-diet="vegetarian" data-time="medium" data-difficulty="medium">
+                    <div class="recipe-image">
+                        <img src="static/images/food-icon.png" alt="Panquecas de Aveia" class="recipe-img">
+                        <span class="recipe-badge breakfast">Café da Manhã</span>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Panquecas de Aveia</h3>
+                        <div class="recipe-meta">
+                            <span class="recipe-time"><i class="fas fa-clock"></i> 25 min</span>
+                            <span class="recipe-difficulty medium"><i class="fas fa-star"></i><i class="fas fa-star"></i> Média</span>
+                        </div>
+                        <p class="recipe-description">Deliciosas panquecas feitas com aveia, banana e canela, servidas com mel e frutas frescas.</p>
+                        <div class="recipe-tags">
+                            <span class="recipe-tag">Vegetariano</span>
+                        </div>
+                        <div class="recipe-actions">
+                            <button class="btn btn-primary btn-sm view-recipe" data-recipe-id="5">Ver Receita</button>
+                            <button class="btn btn-outline btn-sm save-recipe" data-recipe-id="5">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Receita 6 -->
+                <div class="recipe-card" data-meal="lunch" data-diet="vegan" data-time="long" data-difficulty="hard">
+                    <div class="recipe-image">
+                        <img src="static/images/food-icon.png" alt="Risoto de Legumes" class="recipe-img">
+                        <span class="recipe-badge lunch">Almoço</span>
+                    </div>
+                    <div class="recipe-content">
+                        <h3 class="recipe-title">Risoto de Legumes</h3>
+                        <div class="recipe-meta">
+                            <span class="recipe-time"><i class="fas fa-clock"></i> 45 min</span>
+                            <span class="recipe-difficulty hard"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> Difícil</span>
+                        </div>
+                        <p class="recipe-description">Um risoto cremoso com legumes da estação, perfeito para um almoço especial em família.</p>
+                        <div class="recipe-tags">
+                            <span class="recipe-tag">Vegano</span>
+                        </div>
+                        <div class="recipe-actions">
+                            <button class="btn btn-primary btn-sm view-recipe" data-recipe-id="6">Ver Receita</button>
+                            <button class="btn btn-outline btn-sm save-recipe" data-recipe-id="6">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dicas nutricionais -->
+            <div class="nutrition-tips">
+                <h3 class="section-title">Dicas Nutricionais</h3>
+                <div class="tips-carousel">
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h4 class="tip-title">Cores no Prato</h4>
+                        <p class="tip-content">Quanto mais colorido o prato, mais nutrientes diferentes. Incentive seu filho a comer alimentos de várias cores.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h4 class="tip-title">Hidratação</h4>
+                        <p class="tip-content">Ofereça água regularmente ao invés de sucos industrializados ou refrigerantes. Crie o hábito desde cedo.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-carrot"></i>
+                        </div>
+                        <h4 class="tip-title">Lanches Saudáveis</h4>
+                        <p class="tip-content">Tenha sempre opções saudáveis de lanches disponíveis, como frutas cortadas, palitos de legumes ou iogurte natural.</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-control prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="carousel-control next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de detalhes da receita (oculto por padrão) -->
+        <div class="modal" id="recipe-details-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-recipe-title">Smoothie de Frutas</h3>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="recipe-detail-image">
+                        <img src="static/images/food-icon.png" alt="Smoothie de Frutas" id="modal-recipe-img">
+                    </div>
+                    
+                    <div class="recipe-detail-meta">
+                        <span class="recipe-meta-item"><i class="fas fa-clock"></i> <span id="modal-recipe-time">10 min</span></span>
+                        <span class="recipe-meta-item"><i class="fas fa-star"></i> <span id="modal-recipe-difficulty">Fácil</span></span>
+                        <span class="recipe-meta-item"><i class="fas fa-utensils"></i> <span id="modal-recipe-meal">Café da Manhã</span></span>
+                    </div>
+                    
+                    <div class="recipe-detail-section">
+                        <h4>Descrição</h4>
+                        <p id="modal-recipe-description">Um delicioso smoothie de frutas com banana, morango e espinafre, rico em vitaminas e minerais. Perfeito para começar o dia com energia ou para um lanche nutritivo.</p>
+                    </div>
+                    
+                    <div class="recipe-detail-section">
+                        <h4>Ingredientes</h4>
+                        <ul id="modal-recipe-ingredients">
+                            <li>1 banana madura</li>
+                            <li>1 xícara de morangos</li>
+                            <li>1 punhado de espinafre</li>
+                            <li>1 copo de água de coco ou leite vegetal</li>
+                            <li>1 colher de sopa de mel (opcional)</li>
+                            <li>Gelo a gosto</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="recipe-detail-section">
+                        <h4>Modo de Preparo</h4>
+                        <ol id="modal-recipe-steps">
+                            <li>Lave bem todos os ingredientes</li>
+                            <li>Corte a banana e os morangos em pedaços</li>
+                            <li>Coloque todos os ingredientes no liquidificador</li>
+                            <li>Bata até obter uma mistura homogênea</li>
+                            <li>Sirva imediatamente</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="recipe-detail-section">
+                        <h4>Valor Nutricional</h4>
+                        <div class="nutrition-info" id="modal-recipe-nutrition">
+                            <div class="nutrition-item">
+                                <span class="nutrition-label">Calorias</span>
+                                <span class="nutrition-value">150 kcal</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="nutrition-label">Proteínas</span>
+                                <span class="nutrition-value">3g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="nutrition-label">Carboidratos</span>
+                                <span class="nutrition-value">30g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="nutrition-label">Gorduras</span>
+                                <span class="nutrition-value">1g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="nutrition-label">Fibras</span>
+                                <span class="nutrition-value">4g</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-detail-section">
+                        <h4>Dicas</h4>
+                        <ul id="modal-recipe-tips">
+                            <li>Use frutas congeladas para um smoothie mais cremoso</li>
+                            <li>Adicione uma colher de chia ou linhaça para mais fibras</li>
+                            <li>Substitua o espinafre por couve para variar</li>
+                            <li>Sirva em um copo divertido com canudo colorido para atrair as crianças</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="modal-save-recipe">Salvar Receita</button>
+                    <button class="btn btn-secondary" id="modal-close">Fechar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de navegação inferior -->
+        <div class="bottom-nav">
+            <a href="dashboard.html" class="nav-link" data-target="dashboard">
+                <i class="fas fa-home nav-icon"></i>
+                <span>Início</span>
+            </a>
+            <a href="activities.html" class="nav-link" data-target="activities">
+                <i class="fas fa-tasks nav-icon"></i>
+                <span>Atividades</span>
+            </a>
+            <a href="food.html" class="nav-link active" data-target="food">
+                <i class="fas fa-utensils nav-icon"></i>
+                <span>Comidas</span>
+            </a>
+            <a href="chat.html" class="nav-link" data-target="chat">
+                <i class="fas fa-comments nav-icon"></i>
+                <span>Chat</span>
+            </a>
+            <a href="profile.html" class="nav-link" data-target="profile">
+                <i class="fas fa-user nav-icon"></i>
+                <span>Perfil</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay para o menu lateral -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <script src="static/js/main.js"></script>
+    <script src="static/js/auth.js"></script>
+    <script>
+        // Verificar autenticação
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!isLoggedIn()) {
+                window.location.href = 'login.html';
+            } else {
+                // Carregar dados do usuário
+                const user = getLoggedInUser();
+                if (user) {
+                    document.querySelectorAll('.user-name').forEach(el => {
+                        el.textContent = user.name;
+                    });
+                    
+                    document.querySelectorAll('.user-initial').forEach(el => {
+                        el.textContent = user.name.charAt(0);
+                    });
+                    
+                    document.querySelectorAll('.user-role').forEach(el => {
+                        el.textContent = user.role === 'admin' ? 'Administrador' : 'Membro';
+                    });
+                }
+                
+                // Inicializar funcionalidades da página
+                initFoodPage();
+            }
+            
+            // Configurar botão de logout
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                logoutUser();
+            });
+            
+            // Configurar toggle do menu lateral
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideMenu = document.getElementById('side-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            
+            menuToggle.addEventListener('click', function() {
+                sideMenu.classList.toggle('open');
+                menuOverlay.classList.toggle('active');
+            });
+            
+            menuOverlay.addEventListener('click', function() {
+                sideMenu.classList.remove('open');
+                menuOverlay.classList.remove('active');
+            });
+        });
+        
+        // Inicializar funcionalidades da página de comidas
+        function initFoodPage() {
+            // Configurar abas de refeições
+            setupMealTabs();
+            
+            // Configurar filtros
+            setupFoodFilters();
+            
+            // Configurar botões de visualização de receita
+            setupRecipeButtons();
+            
+            // Configurar modal de detalhes
+            setupRecipeModal();
+            
+            // Configurar carrossel de dicas
+            setupTipsCarousel();
+            
+            // Carregar receitas salvas
+            loadSavedRecipes();
+        }
+        
+        // Configurar abas de refeições
+        function setupMealTabs() {
+            const mealTabs = document.querySelectorAll('.meal-tab');
+            
+            mealTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remover classe ativa de todas as abas
+                    mealTabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Adicionar classe ativa à aba clicada
+                    this.classList.add('active');
+                    
+                    // Filtrar receitas por refeição
+                    const meal = this.getAttribute('data-meal');
+                    filterRecipesByMeal(meal);
+                });
+            });
+        }
+        
+        // Filtrar receitas por refeição
+        function filterRecipesByMeal(meal) {
+            const recipeCards = document.querySelectorAll('.recipe-card');
+            
+            recipeCards.forEach(card => {
+                if (meal === 'all' || card.getAttribute('data-meal') === meal) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        // Configurar filtros
+        function setupFoodFilters() {
+            const dietFilter = document.getElementById('diet-filter');
+            const timeFilter = document.getElementById('time-filter');
+            const difficultyFilter = document.getElementById('difficulty-filter');
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            
+            // Função para aplicar filtros
+            function applyFilters() {
+                const dietValue = dietFilter.value;
+                const timeValue = timeFilter.value;
+                const difficultyValue = difficultyFilter.value;
+                const searchValue = searchInput.value.toLowerCase();
+                
+                const recipeCards = document.querySelectorAll('.recipe-card');
+                
+                recipeCards.forEach(card => {
+                    let showCard = true;
+                    
+                    // Verificar se já está oculto pela aba de refeição
+                    if (card.style.display === 'none') {
+                        return;
+                    }
+                    
+                    // Filtrar por dieta
+                    if (dietValue && !card.getAttribute('data-diet').includes(dietValue)) {
+                        showCard = false;
+                    }
+                    
+                    // Filtrar por tempo
+                    if (timeValue && card.getAttribute('data-time') !== timeValue) {
+                        showCard = false;
+                    }
+                    
+                    // Filtrar por dificuldade
+                    if (difficultyValue && card.getAttribute('data-difficulty') !== difficultyValue) {
+                        showCard = false;
+                    }
+                    
+                    // Filtrar por texto de busca
+                    if (searchValue) {
+                        const title = card.querySelector('.recipe-title').textContent.toLowerCase();
+                        const description = card.querySelector('.recipe-description').textContent.toLowerCase();
+                        
+                        if (!title.includes(searchValue) && !description.includes(searchValue)) {
+                            showCard = false;
+                        }
+                    }
+                    
+                    // Mostrar ou ocultar card
+                    card.style.display = showCard ? 'flex' : 'none';
+                });
+            }
+            
+            // Adicionar event listeners
+            dietFilter.addEventListener('change', applyFilters);
+            timeFilter.addEventListener('change', applyFilters);
+            difficultyFilter.addEventListener('change', applyFilters);
+            searchBtn.addEventListener('click', applyFilters);
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.key === 'Enter') {
+                    applyFilters();
+                }
+            });
+        }
+        
+        // Configurar botões de visualização de receita
+        function setupRecipeButtons() {
+            const viewButtons = document.querySelectorAll('.view-recipe');
+            const saveButtons = document.querySelectorAll('.save-recipe');
+            
+            // Botões de visualização
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const recipeId = this.getAttribute('data-recipe-id');
+                    openRecipeModal(recipeId);
+                });
+            });
+            
+            // Botões de salvar
+            saveButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const recipeId = this.getAttribute('data-recipe-id');
+                    toggleSaveRecipe(recipeId, this);
+                });
+            });
+        }
+        
+        // Configurar modal de detalhes da receita
+        function setupRecipeModal() {
+            const modal = document.getElementById('recipe-details-modal');
+            const closeBtn = modal.querySelector('.modal-close');
+            const closeModalBtn = document.getElementById('modal-close');
+            const saveRecipeBtn = document.getElementById('modal-save-recipe');
+            
+            // Fechar modal
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            closeModalBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // Fechar ao clicar fora
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Salvar receita
+            saveRecipeBtn.addEventListener('click', function() {
+                const recipeId = this.getAttribute('data-recipe-id');
+                toggleSaveRecipe(recipeId);
+                
+                // Atualizar botão no card
+                const cardButton = document.querySelector(`.save-recipe[data-recipe-id="${recipeId}"]`);
+                if (cardButton) {
+                    updateSaveButton(cardButton, true);
+                }
+                
+                modal.style.display = 'none';
+            });
+        }
+        
+        // Configurar carrossel de dicas
+        function setupTipsCarousel() {
+            const carousel = document.querySelector('.tips-carousel');
+            const tipCards = carousel.querySelectorAll('.tip-card');
+            const dots = document.querySelectorAll('.carousel-dots .dot');
+            const prevBtn = document.querySelector('.carousel-control.prev');
+            const nextBtn = document.querySelector('.carousel-control.next');
+            
+            let currentIndex = 0;
+            
+            // Função para mostrar dica atual
+            function showTip(index) {
+                // Ocultar todas as dicas
+                tipCards.forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // Remover classe ativa de todos os dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Mostrar dica atual
+                tipCards[index].style.display = 'block';
+                dots[index].classList.add('active');
+                
+                // Atualizar índice atual
+                currentIndex = index;
+            }
+            
+            // Inicializar com a primeira dica
+            showTip(0);
+            
+            // Botão anterior
+            prevBtn.addEventListener('click', function() {
+                let newIndex = currentIndex - 1;
+                if (newIndex < 0) {
+                    newIndex = tipCards.length - 1;
+                }
+                showTip(newIndex);
+            });
+            
+            // Botão próximo
+            nextBtn.addEventListener('click', function() {
+                let newIndex = currentIndex + 1;
+                if (newIndex >= tipCards.length) {
+                    newIndex = 0;
+                }
+                showTip(newIndex);
+            });
+            
+            // Dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    showTip(index);
+                });
+            });
+            
+            // Auto-rotação
+            setInterval(function() {
+                let newIndex = currentIndex + 1;
+                if (newIndex >= tipCards.length) {
+                    newIndex = 0;
+                }
+                showTip(newIndex);
+            }, 5000);
+        }
+        
+        // Abrir modal de detalhes da receita
+        function openRecipeModal(recipeId) {
+            // Simular busca de dados da receita
+            const recipeData = getRecipeData(recipeId);
+            
+            if (!recipeData) return;
+            
+            // Preencher modal com dados da receita
+            document.getElementById('modal-recipe-title').textContent = recipeData.title;
+            document.getElementById('modal-recipe-img').src = recipeData.image;
+            document.getElementById('modal-recipe-img').alt = recipeData.title;
+            document.getElementById('modal-recipe-time').textContent = recipeData.time;
+            document.getElementById('modal-recipe-difficulty').textContent = recipeData.difficulty;
+            document.getElementById('modal-recipe-meal').textContent = recipeData.meal;
+            document.getElementById('modal-recipe-description').textContent = recipeData.description;
+            
+            // Preencher listas
+            const ingredientsEl = document.getElementById('modal-recipe-ingredients');
+            ingredientsEl.innerHTML = '';
+            recipeData.ingredients.forEach(ingredient => {
+                const li = document.createElement('li');
+                li.textContent = ingredient;
+                ingredientsEl.appendChild(li);
+            });
+            
+            const stepsEl = document.getElementById('modal-recipe-steps');
+            stepsEl.innerHTML = '';
+            recipeData.steps.forEach(step => {
+                const li = document.createElement('li');
+                li.textContent = step;
+                stepsEl.appendChild(li);
+            });
+            
+            // Preencher informações nutricionais
+            const nutritionEl = document.getElementById('modal-recipe-nutrition');
+            nutritionEl.innerHTML = '';
+            
+            for (const [label, value] of Object.entries(recipeData.nutrition)) {
+                const div = document.createElement('div');
+                div.className = 'nutrition-item';
+                
+                const labelSpan = document.createElement('span');
+                labelSpan.className = 'nutrition-label';
+                labelSpan.textContent = label;
+                
+                const valueSpan = document.createElement('span');
+                valueSpan.className = 'nutrition-value';
+                valueSpan.textContent = value;
+                
+                div.appendChild(labelSpan);
+                div.appendChild(valueSpan);
+                nutritionEl.appendChild(div);
+            }
+            
+            const tipsEl = document.getElementById('modal-recipe-tips');
+            tipsEl.innerHTML = '';
+            recipeData.tips.forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                tipsEl.appendChild(li);
+            });
+            
+            // Configurar botão de salvar
+            document.getElementById('modal-save-recipe').setAttribute('data-recipe-id', recipeId);
+            
+            // Verificar se já está salva
+            const savedRecipes = JSON.parse(localStorage.getItem('saved_recipes') || '[]');
+            const isSaved = savedRecipes.includes(parseInt(recipeId));
+            
+            if (isSaved) {
+                document.getElementById('modal-save-recipe').textContent = 'Remover dos Salvos';
+            } else {
+                document.getElementById('modal-save-recipe').textContent = 'Salvar Receita';
+            }
+            
+            // Exibir modal
+            document.getElementById('recipe-details-modal').style.display = 'block';
+        }
+        
+        // Alternar salvar/remover receita
+        function toggleSaveRecipe(recipeId, button) {
+            // Obter receitas salvas do localStorage
+            const savedRecipes = JSON.parse(localStorage.getItem('saved_recipes') || '[]');
+            
+            // Verificar se já está salva
+            const recipeIndex = savedRecipes.indexOf(parseInt(recipeId));
+            
+            if (recipeIndex === -1) {
+                // Adicionar à lista de salvas
+                savedRecipes.push(parseInt(recipeId));
+                showNotification('Receita salva com sucesso!', 'success');
+            } else {
+                // Remover da lista de salvas
+                savedRecipes.splice(recipeIndex, 1);
+                showNotification('Receita removida dos salvos.', 'info');
+            }
+            
+            // Salvar no localStorage
+            localStorage.setItem('saved_recipes', JSON.stringify(savedRecipes));
+            
+            // Atualizar botão se fornecido
+            if (button) {
+                updateSaveButton(button, recipeIndex === -1);
+            }
+        }
+        
+        // Atualizar botão de salvar
+        function updateSaveButton(button, isSaved) {
+            if (isSaved) {
+                button.textContent = 'Salvo';
+                button.classList.add('saved');
+            } else {
+                button.textContent = 'Salvar';
+                button.classList.remove('saved');
+            }
+        }
+        
+        // Carregar receitas salvas
+        function loadSavedRecipes() {
+            // Obter receitas salvas do localStorage
+            const savedRecipes = JSON.parse(localStorage.getItem('saved_recipes') || '[]');
+            
+            // Atualizar interface
+            savedRecipes.forEach(recipeId => {
+                const button = document.querySelector(`.save-recipe[data-recipe-id="${recipeId}"]`);
+                if (button) {
+                    updateSaveButton(button, true);
+                }
+            });
+        }
+        
+        // Função para mostrar notificações
+        function showNotification(message, type) {
+            // Criar elemento de notificação
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            // Adicionar ao DOM
+            document.body.appendChild(notification);
+            
+            // Remover após alguns segundos
+            setTimeout(() => {
+                notification.classList.add('fade-out');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+        
+        // Simular dados de receitas
+        function getRecipeData(recipeId) {
+            const recipes = {
+                '1': {
+                    title: 'Smoothie de Frutas',
+                    image: 'static/images/food-icon.png',
+                    time: '10 min',
+                    difficulty: 'Fácil',
+                    meal: 'Café da Manhã',
+                    description: 'Um delicioso smoothie de frutas com banana, morango e espinafre, rico em vitaminas e minerais. Perfeito para começar o dia com energia ou para um lanche nutritivo.',
+                    ingredients: [
+                        '1 banana madura',
+                        '1 xícara de morangos',
+                        '1 punhado de espinafre',
+                        '1 copo de água de coco ou leite vegetal',
+                        '1 colher de sopa de mel (opcional)',
+                        'Gelo a gosto'
+                    ],
+                    steps: [
+                        'Lave bem todos os ingredientes',
+                        'Corte a banana e os morangos em pedaços',
+                        'Coloque todos os ingredientes no liquidificador',
+                        'Bata até obter uma mistura homogênea',
+                        'Sirva imediatamente'
+                    ],
+                    nutrition: {
+                        'Calorias': '150 kcal',
+                        'Proteínas': '3g',
+                        'Carboidratos': '30g',
+                        'Gorduras': '1g',
+                        'Fibras': '4g'
+                    },
+                    tips: [
+                        'Use frutas congeladas para um smoothie mais cremoso',
+                        'Adicione uma colher de chia ou linhaça para mais fibras',
+                        'Substitua o espinafre por couve para variar',
+                        'Sirva em um copo divertido com canudo colorido para atrair as crianças'
+                    ]
+                },
+                '2': {
+                    title: 'Salada Colorida',
+                    image: 'static/images/food-icon.png',
+                    time: '20 min',
+                    difficulty: 'Média',
+                    meal: 'Almoço',
+                    description: 'Uma salada nutritiva com mix de folhas, legumes, grãos e molho especial, perfeita para um almoço leve e saudável. Rica em fibras, vitaminas e minerais essenciais.',
+                    ingredients: [
+                        '2 xícaras de mix de folhas (alface, rúcula, espinafre)',
+                        '1 cenoura ralada',
+                        '1 tomate em cubos',
+                        '1/2 pepino em cubos',
+                        '1/4 de cebola roxa fatiada',
+                        '1/2 xícara de grão de bico cozido',
+                        '1/4 de xícara de nozes ou castanhas picadas',
+                        '2 colheres de sopa de azeite de oliva',
+                        '1 colher de sopa de suco de limão',
+                        'Sal e ervas a gosto'
+                    ],
+                    steps: [
+                        'Lave bem todas as folhas e legumes',
+                        'Corte os legumes conforme indicado',
+                        'Misture as folhas e legumes em uma tigela grande',
+                        'Adicione o grão de bico e as castanhas',
+                        'Em um recipiente pequeno, misture o azeite, limão, sal e ervas',
+                        'Regue a salada com o molho e misture bem',
+                        'Sirva imediatamente'
+                    ],
+                    nutrition: {
+                        'Calorias': '220 kcal',
+                        'Proteínas': '7g',
+                        'Carboidratos': '18g',
+                        'Gorduras': '14g',
+                        'Fibras': '6g'
+                    },
+                    tips: [
+                        'Prepare os ingredientes com antecedência e monte na hora de servir',
+                        'Adicione frutas como maçã ou manga para um toque adocicado',
+                        'Experimente diferentes combinações de folhas e legumes',
+                        'Envolva as crianças na preparação para incentivá-las a comer'
+                    ]
+                },
+                '3': {
+                    title: 'Palitos de Legumes',
+                    image: 'static/images/food-icon.png',
+                    time: '15 min',
+                    difficulty: 'Fácil',
+                    meal: 'Lanche',
+                    description: 'Palitos de cenoura, pepino e aipo com molho de iogurte, uma opção saudável para o lanche das crianças. Nutritivo, crocante e divertido de comer.',
+                    ingredients: [
+                        '2 cenouras médias',
+                        '1 pepino',
+                        '2 talos de aipo',
+                        '1 pimentão vermelho (opcional)',
+                        'Para o molho:',
+                        '1/2 xícara de iogurte natural',
+                        '1 colher de sopa de ervas frescas picadas',
+                        '1 pitada de sal',
+                        '1 colher de chá de suco de limão'
+                    ],
+                    steps: [
+                        'Lave bem todos os legumes',
+                        'Descasque as cenouras e corte em palitos',
+                        'Corte o pepino em palitos (pode remover as sementes)',
+                        'Corte o aipo em palitos de tamanho similar',
+                        'Se usar pimentão, remova as sementes e corte em tiras',
+                        'Para o molho, misture todos os ingredientes em uma tigela pequena',
+                        'Disponha os palitos em um prato com o molho ao centro'
+                    ],
+                    nutrition: {
+                        'Calorias': '80 kcal',
+                        'Proteínas': '3g',
+                        'Carboidratos': '12g',
+                        'Gorduras': '2g',
+                        'Fibras': '3g'
+                    },
+                    tips: [
+                        'Prepare com antecedência e guarde na geladeira em recipiente fechado',
+                        'Experimente outros molhos como húmus ou guacamole',
+                        'Disponha os palitos em formato divertido (como um rosto ou flor)',
+                        'Deixe visível na geladeira para incentivar o consumo'
+                    ]
+                },
+                '4': {
+                    title: 'Sopa de Legumes',
+                    image: 'static/images/food-icon.png',
+                    time: '40 min',
+                    difficulty: 'Média',
+                    meal: 'Jantar',
+                    description: 'Uma sopa nutritiva com diversos legumes e ervas, ideal para um jantar leve e reconfortante. Rica em vitaminas, minerais e fibras, perfeita para noites mais frias.',
+                    ingredients: [
+                        '1 cebola picada',
+                        '2 dentes de alho picados',
+                        '2 cenouras em cubos',
+                        '2 batatas em cubos',
+                        '1 abobrinha em cubos',
+                        '1 xícara de abóbora em cubos',
+                        '1 xícara de couve-flor em floretes',
+                        '1 litro de caldo de legumes',
+                        '2 colheres de sopa de azeite de oliva',
+                        'Sal, pimenta e ervas a gosto'
+                    ],
+                    steps: [
+                        'Em uma panela grande, aqueça o azeite e refogue a cebola e o alho',
+                        'Adicione os legumes mais firmes (cenoura, batata, abóbora) e refogue por 5 minutos',
+                        'Acrescente o caldo de legumes e deixe cozinhar por 15 minutos',
+                        'Adicione a abobrinha e a couve-flor e cozinhe por mais 10 minutos',
+                        'Tempere com sal, pimenta e ervas',
+                        'Se desejar, bata parte da sopa no liquidificador para ficar mais cremosa',
+                        'Sirva quente com um fio de azeite por cima'
+                    ],
+                    nutrition: {
+                        'Calorias': '180 kcal',
+                        'Proteínas': '4g',
+                        'Carboidratos': '25g',
+                        'Gorduras': '7g',
+                        'Fibras': '5g'
+                    },
+                    tips: [
+                        'Prepare uma quantidade maior e congele em porções individuais',
+                        'Adicione grãos como quinoa ou cevada para uma refeição mais completa',
+                        'Sirva com torradas integrais para as crianças molharem na sopa',
+                        'Varie os legumes de acordo com a estação ou preferência'
+                    ]
+                },
+                '5': {
+                    title: 'Panquecas de Aveia',
+                    image: 'static/images/food-icon.png',
+                    time: '25 min',
+                    difficulty: 'Média',
+                    meal: 'Café da Manhã',
+                    description: 'Deliciosas panquecas feitas com aveia, banana e canela, servidas com mel e frutas frescas. Uma opção nutritiva e saborosa para começar o dia com energia.',
+                    ingredients: [
+                        '2 xícaras de aveia em flocos',
+                        '2 bananas maduras',
+                        '2 ovos',
+                        '1 xícara de leite (ou leite vegetal)',
+                        '1 colher de chá de canela em pó',
+                        '1 colher de chá de fermento em pó',
+                        '1 pitada de sal',
+                        'Óleo de coco para untar a frigideira',
+                        'Para servir: mel, frutas frescas, iogurte'
+                    ],
+                    steps: [
+                        'No liquidificador, bata a aveia até virar uma farinha',
+                        'Adicione as bananas, ovos, leite, canela e sal',
+                        'Bata até obter uma massa homogênea',
+                        'Por último, adicione o fermento e pulse algumas vezes',
+                        'Aqueça uma frigideira antiaderente e unte com óleo de coco',
+                        'Despeje porções da massa e cozinhe até formar bolhas na superfície',
+                        'Vire e cozinhe do outro lado até dourar',
+                        'Sirva com mel, frutas frescas e/ou iogurte'
+                    ],
+                    nutrition: {
+                        'Calorias': '280 kcal',
+                        'Proteínas': '10g',
+                        'Carboidratos': '45g',
+                        'Gorduras': '8g',
+                        'Fibras': '6g'
+                    },
+                    tips: [
+                        'Prepare a massa na noite anterior para um café da manhã mais rápido',
+                        'Faça panquecas em formatos divertidos para as crianças',
+                        'Adicione frutas como mirtilos ou pedaços de maçã à massa',
+                        'As panquecas podem ser congeladas entre folhas de papel manteiga'
+                    ]
+                },
+                '6': {
+                    title: 'Risoto de Legumes',
+                    image: 'static/images/food-icon.png',
+                    time: '45 min',
+                    difficulty: 'Difícil',
+                    meal: 'Almoço',
+                    description: 'Um risoto cremoso com legumes da estação, perfeito para um almoço especial em família. Rico em sabores e texturas, é uma forma deliciosa de incluir vegetais na alimentação.',
+                    ingredients: [
+                        '2 xícaras de arroz arbóreo',
+                        '1 cebola picada',
+                        '2 dentes de alho picados',
+                        '1 cenoura em cubos pequenos',
+                        '1 abobrinha em cubos pequenos',
+                        '1 xícara de ervilhas frescas ou congeladas',
+                        '1/2 xícara de vinho branco seco (opcional)',
+                        '4-5 xícaras de caldo de legumes quente',
+                        '2 colheres de sopa de azeite de oliva',
+                        '1/2 xícara de queijo parmesão ralado (opcional)',
+                        'Sal, pimenta e ervas frescas a gosto'
+                    ],
+                    steps: [
+                        'Em uma panela grande, aqueça o azeite e refogue a cebola até ficar transparente',
+                        'Adicione o alho e refogue por mais 1 minuto',
+                        'Acrescente a cenoura e cozinhe por 3 minutos',
+                        'Adicione o arroz e mexa bem para envolver com o azeite',
+                        'Se usar, adicione o vinho e mexa até evaporar',
+                        'Comece a adicionar o caldo quente, uma concha por vez, mexendo constantemente',
+                        'Quando o arroz absorver o líquido, adicione mais caldo',
+                        'Após 15 minutos, adicione a abobrinha e as ervilhas',
+                        'Continue adicionando caldo e mexendo até o arroz ficar al dente (cerca de 20-25 minutos total)',
+                        'Retire do fogo, adicione o queijo parmesão se desejar, e misture',
+                        'Tempere com sal, pimenta e ervas frescas',
+                        'Deixe descansar por 2 minutos antes de servir'
+                    ],
+                    nutrition: {
+                        'Calorias': '320 kcal',
+                        'Proteínas': '9g',
+                        'Carboidratos': '55g',
+                        'Gorduras': '8g',
+                        'Fibras': '4g'
+                    },
+                    tips: [
+                        'Use legumes da estação para melhor sabor e valor nutricional',
+                        'O segredo do risoto é mexer constantemente e adicionar o caldo aos poucos',
+                        'Para uma versão vegana, omita o queijo ou use alternativas vegetais',
+                        'Envolva as crianças na preparação, deixando-as adicionar os legumes'
+                    ]
+                }
+            };
+            
+            return recipes[recipeId];
+        }
+    </script>
+</body>
+</html>

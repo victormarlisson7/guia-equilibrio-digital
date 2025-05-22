@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Equilíbrio Digital - Login</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Guia Equilíbrio Digital</h1>
+        </div>
+
+        <div class="login-container">
+            <div class="login-logo">
+                <img src="static/images/logo.png" alt="Guia Equilíbrio Digital Logo" width="150">
+            </div>
+            
+            <h2 class="section-title">Acesso à Área de Membros</h2>
+            
+            <div class="card">
+                <div class="login-tabs">
+                    <div class="login-tab active" data-tab="login">Login</div>
+                    <div class="login-tab" data-tab="register">Cadastro</div>
+                </div>
+                
+                <div class="tab-content" id="login-content">
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="login-email" class="form-label">E-mail</label>
+                            <input type="email" id="login-email" class="form-control" placeholder="Seu e-mail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password" class="form-label">Senha</label>
+                            <input type="password" id="login-password" class="form-control" placeholder="Sua senha" required>
+                        </div>
+                        
+                        <div class="form-group form-check">
+                            <input type="checkbox" id="remember-me" class="form-check-input">
+                            <label for="remember-me" class="form-check-label">Lembrar de mim</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                        
+                        <div class="form-footer">
+                            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="tab-content" id="register-content" style="display: none;">
+                    <form id="register-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="register-name" class="form-label">Nome Completo</label>
+                            <input type="text" id="register-name" class="form-control" placeholder="Seu nome completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-email" class="form-label">E-mail</label>
+                            <input type="email" id="register-email" class="form-control" placeholder="Seu e-mail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-password" class="form-label">Senha</label>
+                            <input type="password" id="register-password" class="form-control" placeholder="Crie uma senha" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-password-confirm" class="form-label">Confirmar Senha</label>
+                            <input type="password" id="register-password-confirm" class="form-control" placeholder="Confirme sua senha" required>
+                        </div>
+                        
+                        <div class="form-group form-check">
+                            <input type="checkbox" id="terms-agree" class="form-check-input" required>
+                            <label for="terms-agree" class="form-check-label">Concordo com os <a href="#" class="terms-link">Termos de Uso</a></label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="login-info">
+                <p>O Guia Equilíbrio Digital é um espaço exclusivo para pais que desejam ajudar seus filhos a terem uma relação saudável com a tecnologia.</p>
+                <p>Acesse atividades práticas, dicas de alimentação saudável, imagens para colorir e muito mais!</p>
+            </div>
+        </div>
+        
+        <div class="login-footer">
+            <p>&copy; 2025 Guia Equilíbrio Digital. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    <script src="static/js/main.js"></script>
+    <script src="static/js/auth.js"></script>
+</body>
+</html>

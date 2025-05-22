@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Equilíbrio Digital - Dashboard</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container auth-required">
+        <div class="header">
+            <h1>Guia Equilíbrio Digital</h1>
+            <div class="menu-icon" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- Menu lateral (oculto por padrão) -->
+        <div class="side-menu" id="side-menu">
+            <div class="user-profile">
+                <div class="avatar avatar-lg">
+                    <span class="user-initial">A</span>
+                </div>
+                <div class="user-info">
+                    <h3 class="user-name">Ana Silva</h3>
+                    <p class="user-role">Membro</p>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html" class="side-nav-item active">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="activities.html" class="side-nav-item">
+                    <i class="fas fa-tasks"></i> Atividades
+                </a>
+                <a href="food.html" class="side-nav-item">
+                    <i class="fas fa-utensils"></i> Comidas Saudáveis
+                </a>
+                <a href="coloring.html" class="side-nav-item">
+                    <i class="fas fa-paint-brush"></i> Colorir
+                </a>
+                <a href="chat.html" class="side-nav-item">
+                    <i class="fas fa-comments"></i> Chat
+                </a>
+                <a href="profile.html" class="side-nav-item">
+                    <i class="fas fa-user"></i> Perfil
+                </a>
+                <a href="#" class="side-nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </a>
+            </nav>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="main-content">
+            <h2 class="section-title">Bem-vindo(a) ao Guia Equilíbrio Digital</h2>
+            
+            <!-- Resumo de progresso -->
+            <div class="card">
+                <h3 class="card-title">Seu Progresso</h3>
+                <div class="progress-summary">
+                    <div class="progress-item">
+                        <span class="progress-label">Atividades Concluídas</span>
+                        <div class="activity-progress">
+                            <div class="progress-bar" style="width: 40%"></div>
+                        </div>
+                        <span class="progress-text">12 de 30</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desafio do dia -->
+            <div class="card">
+                <h3 class="card-title">Desafio do Dia</h3>
+                <div class="daily-challenge">
+                    <div class="challenge-icon">
+                        <img src="static/images/activities-icon.png" alt="Ícone de atividade" width="50">
+                    </div>
+                    <div class="challenge-content">
+                        <h4>Desenho em família</h4>
+                        <p>Dedique 30 minutos para desenhar junto com seu filho hoje.</p>
+                        <button class="btn btn-secondary btn-sm">Iniciar Desafio</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Atividades recentes -->
+            <div class="card">
+                <h3 class="card-title">Atividades Recentes</h3>
+                <div class="recent-activities">
+                    <div class="activity-item">
+                        <div class="activity-status completed">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Brincadeira ao ar livre</h4>
+                            <p>Concluída em 21/05/2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-status completed">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Leitura em família</h4>
+                            <p>Concluída em 20/05/2025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-status pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Jogo de tabuleiro</h4>
+                            <p>Iniciada em 19/05/2025</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="activities.html" class="btn btn-primary btn-sm">Ver Todas as Atividades</a>
+                </div>
+            </div>
+            
+            <!-- Seções recomendadas -->
+            <h3 class="section-title">Recomendado para Você</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="static/images/food-icon.png" alt="Comidas Saudáveis" class="card-img">
+                    </div>
+                    <h3 class="card-title">Receitas Saudáveis</h3>
+                    <p class="card-content">Descubra receitas deliciosas e nutritivas para toda a família.</p>
+                    <a href="food.html" class="btn btn-primary btn-sm">Explorar</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="static/images/coloring-icon.png" alt="Colorir" class="card-img">
+                    </div>
+                    <h3 class="card-title">Imagens para Colorir</h3>
+                    <p class="card-content">Atividades criativas com temática cristã para seus filhos.</p>
+                    <a href="coloring.html" class="btn btn-primary btn-sm">Explorar</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image">
+                        <img src="static/images/chat-icon.png" alt="Chat" class="card-img">
+                    </div>
+                    <h3 class="card-title">Chat entre Pais</h3>
+                    <p class="card-content">Compartilhe experiências e dicas com outros pais da comunidade.</p>
+                    <a href="chat.html" class="btn btn-primary btn-sm">Explorar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de navegação inferior -->
+        <div class="bottom-nav">
+            <a href="dashboard.html" class="nav-link active" data-target="dashboard">
+                <i class="fas fa-home nav-icon"></i>
+                <span>Início</span>
+            </a>
+            <a href="activities.html" class="nav-link" data-target="activities">
+                <i class="fas fa-tasks nav-icon"></i>
+                <span>Atividades</span>
+            </a>
+            <a href="food.html" class="nav-link" data-target="food">
+                <i class="fas fa-utensils nav-icon"></i>
+                <span>Comidas</span>
+            </a>
+            <a href="chat.html" class="nav-link" data-target="chat">
+                <i class="fas fa-comments nav-icon"></i>
+                <span>Chat</span>
+            </a>
+            <a href="profile.html" class="nav-link" data-target="profile">
+                <i class="fas fa-user nav-icon"></i>
+                <span>Perfil</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay para o menu lateral -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <script src="static/js/main.js"></script>
+    <script src="static/js/auth.js"></script>
+    <script>
+        // Verificar autenticação
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!isLoggedIn()) {
+                window.location.href = 'login.html';
+            } else {
+                // Carregar dados do usuário
+                const user = getLoggedInUser();
+                if (user) {
+                    document.querySelectorAll('.user-name').forEach(el => {
+                        el.textContent = user.name;
+                    });
+                    
+                    document.querySelectorAll('.user-initial').forEach(el => {
+                        el.textContent = user.name.charAt(0);
+                    });
+                    
+                    document.querySelectorAll('.user-role').forEach(el => {
+                        el.textContent = user.role === 'admin' ? 'Administrador' : 'Membro';
+                    });
+                }
+            }
+            
+            // Configurar botão de logout
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                logoutUser();
+            });
+            
+            // Configurar toggle do menu lateral
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideMenu = document.getElementById('side-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            
+            menuToggle.addEventListener('click', function() {
+                sideMenu.classList.toggle('open');
+                menuOverlay.classList.toggle('active');
+            });
+            
+            menuOverlay.addEventListener('click', function() {
+                sideMenu.classList.remove('open');
+                menuOverlay.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

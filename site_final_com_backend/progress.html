@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Equilíbrio Digital - Progresso</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container auth-required">
+        <div class="header">
+            <h1>Guia Equilíbrio Digital</h1>
+            <div class="menu-icon" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- Menu lateral (oculto por padrão) -->
+        <div class="side-menu" id="side-menu">
+            <div class="user-profile">
+                <div class="avatar avatar-lg">
+                    <span class="user-initial">A</span>
+                </div>
+                <div class="user-info">
+                    <h3 class="user-name">Ana Silva</h3>
+                    <p class="user-role">Membro</p>
+                </div>
+            </div>
+            <nav class="side-nav">
+                <a href="dashboard.html" class="side-nav-item">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="activities.html" class="side-nav-item">
+                    <i class="fas fa-tasks"></i> Atividades
+                </a>
+                <a href="food.html" class="side-nav-item">
+                    <i class="fas fa-utensils"></i> Comidas Saudáveis
+                </a>
+                <a href="coloring.html" class="side-nav-item">
+                    <i class="fas fa-paint-brush"></i> Colorir
+                </a>
+                <a href="chat.html" class="side-nav-item">
+                    <i class="fas fa-comments"></i> Chat
+                </a>
+                <a href="progress.html" class="side-nav-item active">
+                    <i class="fas fa-chart-line"></i> Progresso
+                </a>
+                <a href="profile.html" class="side-nav-item">
+                    <i class="fas fa-user"></i> Perfil
+                </a>
+                <a href="#" class="side-nav-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </a>
+            </nav>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="main-content">
+            <h2 class="section-title">Seu Progresso</h2>
+            
+            <!-- Resumo do progresso -->
+            <div class="progress-summary">
+                <div class="progress-card">
+                    <div class="progress-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="progress-info">
+                        <h3>Atividades</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="activities-progress-bar">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                            <span class="progress-text" id="activities-progress-text">45% (9/20)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-card">
+                    <div class="progress-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="progress-info">
+                        <h3>Comidas Saudáveis</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="food-progress-bar">
+                                <div class="progress-fill" style="width: 30%"></div>
+                            </div>
+                            <span class="progress-text" id="food-progress-text">30% (3/10)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-card">
+                    <div class="progress-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="progress-info">
+                        <h3>Imagens Coloridas</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="coloring-progress-bar">
+                                <div class="progress-fill" style="width: 20%"></div>
+                            </div>
+                            <span class="progress-text" id="coloring-progress-text">20% (2/10)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="progress-card">
+                    <div class="progress-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="progress-info">
+                        <h3>Progresso Total</h3>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="total-progress-bar">
+                                <div class="progress-fill" style="width: 35%"></div>
+                            </div>
+                            <span class="progress-text" id="total-progress-text">35% (14/40)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conquistas -->
+            <div class="achievements-section">
+                <h3 class="section-title">Suas Conquistas</h3>
+                <div class="achievements-grid">
+                    <div class="achievement-card unlocked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>Primeiros Passos</h4>
+                            <p>Completou sua primeira atividade</p>
+                        </div>
+                        <div class="achievement-badge">
+                            <span class="badge-text">Conquistado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card unlocked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>Chef Iniciante</h4>
+                            <p>Salvou 3 receitas saudáveis</p>
+                        </div>
+                        <div class="achievement-badge">
+                            <span class="badge-text">Conquistado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card unlocked">
+                        <div class="achievement-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>Artista Colorido</h4>
+                            <p>Coloriu 2 imagens</p>
+                        </div>
+                        <div class="achievement-badge">
+                            <span class="badge-text">Conquistado</span>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon locked">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>Mestre das Atividades</h4>
+                            <p>Complete 10 atividades</p>
+                        </div>
+                        <div class="achievement-progress">
+                            <div class="mini-progress-bar">
+                                <div class="mini-progress-fill" style="width: 90%"></div>
+                            </div>
+                            <span class="mini-progress-text">9/10</span>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon locked">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>Chef Experiente</h4>
+                            <p>Salve 5 receitas saudáveis</p>
+                        </div>
+                        <div class="achievement-progress">
+                            <div class="mini-progress-bar">
+                                <div class="mini-progress-fill" style="width: 60%"></div>
+                            </div>
+                            <span class="mini-progress-text">3/5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon locked">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>Artista Dedicado</h4>
+                            <p>Colora 5 imagens</p>
+                        </div>
+                        <div class="achievement-progress">
+                            <div class="mini-progress-bar">
+                                <div class="mini-progress-fill" style="width: 40%"></div>
+                            </div>
+                            <span class="mini-progress-text">2/5</span>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon locked">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>Comunicador</h4>
+                            <p>Participe de 3 tópicos no chat</p>
+                        </div>
+                        <div class="achievement-progress">
+                            <div class="mini-progress-bar">
+                                <div class="mini-progress-fill" style="width: 33%"></div>
+                            </div>
+                            <span class="mini-progress-text">1/3</span>
+                        </div>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon locked">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="achievement-info">
+                            <h4>Equilíbrio Digital</h4>
+                            <p>Complete 50% do progresso total</p>
+                        </div>
+                        <div class="achievement-progress">
+                            <div class="mini-progress-bar">
+                                <div class="mini-progress-fill" style="width: 70%"></div>
+                            </div>
+                            <span class="mini-progress-text">35%/50%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Histórico de atividades -->
+            <div class="activity-history-section">
+                <h3 class="section-title">Histórico de Atividades</h3>
+                <div class="activity-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Hoje</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="timeline-text">
+                                <h4>Salvou uma receita</h4>
+                                <p>Smoothie de Frutas</p>
+                            </div>
+                            <div class="timeline-time">10:30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Hoje</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="timeline-text">
+                                <h4>Completou uma atividade</h4>
+                                <p>Brincadeira ao ar livre</p>
+                            </div>
+                            <div class="timeline-time">09:15</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Ontem</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div class="timeline-text">
+                                <h4>Coloriu uma imagem</h4>
+                                <p>Arca de Noé</p>
+                            </div>
+                            <div class="timeline-time">16:45</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Ontem</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="timeline-text">
+                                <h4>Participou de um tópico</h4>
+                                <p>Dicas para reduzir o tempo de tela</p>
+                            </div>
+                            <div class="timeline-time">14:20</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">20/05</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="timeline-text">
+                                <h4>Completou uma atividade</h4>
+                                <p>Leitura em família</p>
+                            </div>
+                            <div class="timeline-time">19:30</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">19/05</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="timeline-text">
+                                <h4>Conquistou uma medalha</h4>
+                                <p>Artista Colorido</p>
+                            </div>
+                            <div class="timeline-time">11:10</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="load-more-container">
+                    <button class="btn btn-outline" id="load-more-history">
+                        Carregar mais
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Estatísticas -->
+            <div class="statistics-section">
+                <h3 class="section-title">Estatísticas</h3>
+                <div class="statistics-grid">
+                    <div class="statistic-card">
+                        <div class="statistic-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="statistic-info">
+                            <h4>Dias Ativos</h4>
+                            <p class="statistic-value">7</p>
+                        </div>
+                    </div>
+                    
+                    <div class="statistic-card">
+                        <div class="statistic-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="statistic-info">
+                            <h4>Atividades Concluídas</h4>
+                            <p class="statistic-value">9</p>
+                        </div>
+                    </div>
+                    
+                    <div class="statistic-card">
+                        <div class="statistic-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="statistic-info">
+                            <h4>Receitas Salvas</h4>
+                            <p class="statistic-value">3</p>
+                        </div>
+                    </div>
+                    
+                    <div class="statistic-card">
+                        <div class="statistic-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="statistic-info">
+                            <h4>Imagens Coloridas</h4>
+                            <p class="statistic-value">2</p>
+                        </div>
+                    </div>
+                    
+                    <div class="statistic-card">
+                        <div class="statistic-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="statistic-info">
+                            <h4>Participações no Chat</h4>
+                            <p class="statistic-value">1</p>
+                        </div>
+                    </div>
+                    
+                    <div class="statistic-card">
+                        <div class="statistic-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="statistic-info">
+                            <h4>Conquistas</h4>
+                            <p class="statistic-value">3/8</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Próximos desafios -->
+            <div class="challenges-section">
+                <h3 class="section-title">Próximos Desafios</h3>
+                <div class="challenges-list">
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="challenge-info">
+                            <h4>Complete mais 1 atividade</h4>
+                            <p>Para desbloquear a conquista "Mestre das Atividades"</p>
+                            <div class="challenge-progress">
+                                <div class="mini-progress-bar">
+                                    <div class="mini-progress-fill" style="width: 90%"></div>
+                                </div>
+                                <span class="mini-progress-text">9/10</span>
+                            </div>
+                        </div>
+                        <div class="challenge-action">
+                            <a href="activities.html" class="btn btn-primary btn-sm">Ir para Atividades</a>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="challenge-info">
+                            <h4>Salve mais 2 receitas</h4>
+                            <p>Para desbloquear a conquista "Chef Experiente"</p>
+                            <div class="challenge-progress">
+                                <div class="mini-progress-bar">
+                                    <div class="mini-progress-fill" style="width: 60%"></div>
+                                </div>
+                                <span class="mini-progress-text">3/5</span>
+                            </div>
+                        </div>
+                        <div class="challenge-action">
+                            <a href="food.html" class="btn btn-primary btn-sm">Ir para Comidas</a>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-card">
+                        <div class="challenge-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="challenge-info">
+                            <h4>Colora mais 3 imagens</h4>
+                            <p>Para desbloquear a conquista "Artista Dedicado"</p>
+                            <div class="challenge-progress">
+                                <div class="mini-progress-bar">
+                                    <div class="mini-progress-fill" style="width: 40%"></div>
+                                </div>
+                                <span class="mini-progress-text">2/5</span>
+                            </div>
+                        </div>
+                        <div class="challenge-action">
+                            <a href="coloring.html" class="btn btn-primary btn-sm">Ir para Colorir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de navegação inferior -->
+        <div class="bottom-nav">
+            <a href="dashboard.html" class="nav-link" data-target="dashboard">
+                <i class="fas fa-home nav-icon"></i>
+                <span>Início</span>
+            </a>
+            <a href="activities.html" class="nav-link" data-target="activities">
+                <i class="fas fa-tasks nav-icon"></i>
+                <span>Atividades</span>
+            </a>
+            <a href="food.html" class="nav-link" data-target="food">
+                <i class="fas fa-utensils nav-icon"></i>
+                <span>Comidas</span>
+            </a>
+            <a href="chat.html" class="nav-link" data-target="chat">
+                <i class="fas fa-comments nav-icon"></i>
+                <span>Chat</span>
+            </a>
+            <a href="progress.html" class="nav-link active" data-target="progress">
+                <i class="fas fa-chart-line nav-icon"></i>
+                <span>Progresso</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay para o menu lateral -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <script src="static/js/main.js"></script>
+    <script src="static/js/auth.js"></script>
+    <script>
+        // Verificar autenticação
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!isLoggedIn()) {
+                window.location.href = 'login.html';
+            } else {
+                // Carregar dados do usuário
+                const user = getLoggedInUser();
+                if (user) {
+                    document.querySelectorAll('.user-name').forEach(el => {
+                        el.textContent = user.name;
+                    });
+                    
+                    document.querySelectorAll('.user-initial').forEach(el => {
+                        el.textContent = user.name.charAt(0);
+                    });
+                    
+                    document.querySelectorAll('.user-role').forEach(el => {
+                        el.textContent = user.role === 'admin' ? 'Administrador' : 'Membro';
+                    });
+                }
+                
+                // Inicializar funcionalidades da página
+                initProgressPage();
+            }
+            
+            // Configurar botão de logout
+            document.getElementById('logout-btn').addEventListener('click', function(e) {
+                e.preventDefault();
+                logoutUser();
+            });
+            
+            // Configurar toggle do menu lateral
+            const menuToggle = document.getElementById('menu-toggle');
+            const sideMenu = document.getElementById('side-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            
+            menuToggle.addEventListener('click', function() {
+                sideMenu.classList.toggle('open');
+                menuOverlay.classList.toggle('active');
+            });
+            
+            menuOverlay.addEventListener('click', function() {
+                sideMenu.classList.remove('open');
+                menuOverlay.classList.remove('active');
+            });
+        });
+        
+        // Inicializar funcionalidades da página de progresso
+        function initProgressPage() {
+            // Carregar dados de progresso
+            loadProgressData();
+            
+            // Configurar botão de carregar mais histórico
+            document.getElementById('load-more-history').addEventListener('click', loadMoreHistory);
+            
+            // Animar barras de progresso
+            animateProgressBars();
+        }
+        
+        // Carregar dados de progresso
+        function loadProgressData() {
+            // Em uma implementação real, esses dados viriam do backend
+            // Aqui estamos simulando com dados do localStorage
+            
+            // Atividades
+            const completedActivities = JSON.parse(localStorage.getItem('completed_activities') || '[]');
+            const totalActivities = 20; // Total de atividades disponíveis
+            const activitiesProgress = Math.round((completedActivities.length / totalActivities) * 100);
+            
+            // Comidas
+            const savedRecipes = JSON.parse(localStorage.getItem('saved_recipes') || '[]');
+            const totalRecipes = 10; // Total de receitas para salvar
+            const foodProgress = Math.round((savedRecipes.length / totalRecipes) * 100);
+            
+            // Colorir
+            const coloredImages = JSON.parse(localStorage.getItem('colored_images') || '[]');
+            const totalImages = 10; // Total de imagens para colorir
+            const coloringProgress = Math.round((coloredImages.length / totalImages) * 100);
+            
+            // Total
+            const totalItems = totalActivities + totalRecipes + totalImages;
+            const completedItems = completedActivities.length + savedRecipes.length + coloredImages.length;
+            const totalProgress = Math.round((completedItems / totalItems) * 100);
+            
+            // Atualizar interface
+            updateProgressBar('activities-progress-bar', activitiesProgress);
+            updateProgressText('activities-progress-text', `${activitiesProgress}% (${completedActivities.length}/${totalActivities})`);
+            
+            updateProgressBar('food-progress-bar', foodProgress);
+            updateProgressText('food-progress-text', `${foodProgress}% (${savedRecipes.length}/${totalRecipes})`);
+            
+            updateProgressBar('coloring-progress-bar', coloringProgress);
+            updateProgressText('coloring-progress-text', `${coloringProgress}% (${coloredImages.length}/${totalImages})`);
+            
+            updateProgressBar('total-progress-bar', totalProgress);
+            updateProgressText('total-progress-text', `${totalProgress}% (${completedItems}/${totalItems})`);
+            
+            // Atualizar estatísticas
+            document.querySelector('.statistic-card:nth-child(2) .statistic-value').textContent = completedActivities.length;
+            document.querySelector('.statistic-card:nth-child(3) .statistic-value').textContent = savedRecipes.length;
+            document.querySelector('.statistic-card:nth-child(4) .statistic-value').textContent = coloredImages.length;
+            
+            // Verificar conquistas
+            checkAchievements(completedActivities.length, savedRecipes.length, coloredImages.length);
+        }
+        
+        // Atualizar barra de progresso
+        function updateProgressBar(id, percentage) {
+            const progressBar = document.getElementById(id);
+            if (progressBar) {
+                const progressFill = progressBar.querySelector('.progress-fill');
+                progressFill.style.width = `${percentage}%`;
+            }
+        }
+        
+        // Atualizar texto de progresso
+        function updateProgressText(id, text) {
+            const progressText = document.getElementById(id);
+            if (progressText) {
+                progressText.textContent = text;
+            }
+        }
+        
+        // Verificar conquistas
+        function checkAchievements(activitiesCount, recipesCount, coloringCount) {
+            // Aqui você verificaria as condições para cada conquista
+            // e atualizaria a interface de acordo
+            
+            // Exemplo: Mestre das Atividades (10 atividades)
+            const masterActivityCard = document.querySelector('.achievement-card:nth-child(4)');
+            const masterActivityProgress = masterActivityCard.querySelector('.mini-progress-fill');
+            const masterActivityText = masterActivityCard.querySelector('.mini-progress-text');
+            
+            masterActivityProgress.style.width = `${Math.min(activitiesCount / 10 * 100, 100)}%`;
+            masterActivityText.textContent = `${activitiesCount}/10`;
+            
+            if (activitiesCount >= 10) {
+                masterActivityCard.classList.add('unlocked');
+                masterActivityCard.querySelector('.achievement-icon').classList.remove('locked');
+                masterActivityCard.querySelector('.achievement-icon i').className = 'fas fa-star';
+                masterActivityCard.querySelector('.achievement-progress').innerHTML = '<div class="achievement-badge"><span class="badge-text">Conquistado</span></div>';
+            }
+            
+            // Exemplo: Chef Experiente (5 receitas)
+            const chefCard = document.querySelector('.achievement-card:nth-child(5)');
+            const chefProgress = chefCard.querySelector('.mini-progress-fill');
+            const chefText = chefCard.querySelector('.mini-progress-text');
+            
+            chefProgress.style.width = `${Math.min(recipesCount / 5 * 100, 100)}%`;
+            chefText.textContent = `${recipesCount}/5`;
+            
+            if (recipesCount >= 5) {
+                chefCard.classList.add('unlocked');
+                chefCard.querySelector('.achievement-icon').classList.remove('locked');
+                chefCard.querySelector('.achievement-icon i').className = 'fas fa-utensils';
+                chefCard.querySelector('.achievement-progress').innerHTML = '<div class="achievement-badge"><span class="badge-text">Conquistado</span></div>';
+            }
+            
+            // Exemplo: Artista Dedicado (5 imagens)
+            const artistCard = document.querySelector('.achievement-card:nth-child(6)');
+            const artistProgress = artistCard.querySelector('.mini-progress-fill');
+            const artistText = artistCard.querySelector('.mini-progress-text');
+            
+            artistProgress.style.width = `${Math.min(coloringCount / 5 * 100, 100)}%`;
+            artistText.textContent = `${coloringCount}/5`;
+            
+            if (coloringCount >= 5) {
+                artistCard.classList.add('unlocked');
+                artistCard.querySelector('.achievement-icon').classList.remove('locked');
+                artistCard.querySelector('.achievement-icon i').className = 'fas fa-paint-brush';
+                artistCard.querySelector('.achievement-progress').innerHTML = '<div class="achievement-badge"><span class="badge-text">Conquistado</span></div>';
+            }
+        }
+        
+        // Carregar mais histórico
+        function loadMoreHistory() {
+            // Em uma implementação real, você carregaria mais itens do histórico
+            // Aqui estamos apenas adicionando alguns itens estáticos para demonstração
+            
+            const timeline = document.querySelector('.activity-timeline');
+            
+            const newItems = [
+                {
+                    date: '18/05',
+                    icon: 'fas fa-utensils',
+                    title: 'Salvou uma receita',
+                    description: 'Salada Colorida',
+                    time: '14:45'
+                },
+                {
+                    date: '17/05',
+                    icon: 'fas fa-tasks',
+                    title: 'Completou uma atividade',
+                    description: 'Jogo de tabuleiro em família',
+                    time: '20:10'
+                },
+                {
+                    date: '16/05',
+                    icon: 'fas fa-paint-brush',
+                    title: 'Coloriu uma imagem',
+                    description: 'Daniel na cova dos leões',
+                    time: '17:30'
+                }
+            ];
+            
+            newItems.forEach(item => {
+                const itemHTML = `
+                    <div class="timeline-item">
+                        <div class="timeline-date">${item.date}</div>
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="${item.icon}"></i>
+                            </div>
+                            <div class="timeline-text">
+                                <h4>${item.title}</h4>
+                                <p>${item.description}</p>
+                            </div>
+                            <div class="timeline-time">${item.time}</div>
+                        </div>
+                    </div>
+                `;
+                
+                timeline.insertAdjacentHTML('beforeend', itemHTML);
+            });
+            
+            // Desabilitar botão após carregar mais itens
+            document.getElementById('load-more-history').disabled = true;
+            document.getElementById('load-more-history').textContent = 'Não há mais itens';
+        }
+        
+        // Animar barras de progresso
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            
+            progressBars.forEach(bar => {
+                const targetWidth = bar.style.width;
+                bar.style.width = '0%';
+                
+                setTimeout(() => {
+                    bar.style.transition = 'width 1s ease-in-out';
+                    bar.style.width = targetWidth;
+                }, 300);
+            });
+        }
+    </script>
+</body>
+</html>
